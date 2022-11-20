@@ -1,10 +1,11 @@
 {
   "name": "Reign in Hell",
+  "revision": "0.1",
   "game": "Reign in Hell",
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
   "url": "https://www.snarlingbadger.com/reigninhell",
-  "info": "",
+  "notes": "This manifest is provided for the purposes of testing *Rosterizer* and is not intended for distribution.",
   "manifest": {
     "assetTaxonomy": {
       "Demon": {
@@ -2004,8 +2005,7 @@
             "value": 5,
             "statType": "numeric"
           }
-        },
-        "designation": "Executioner"
+        }
       },
       "Devout§Lord of the Pit": {
         "assets": {
@@ -2068,8 +2068,7 @@
             "tracked": true,
             "dynamic": true
           }
-        },
-        "designation": "Lord of the Pit"
+        }
       },
       "Devout§Madness Demon": {
         "assets": {
@@ -2131,8 +2130,7 @@
             "value": 5,
             "statType": "numeric"
           }
-        },
-        "designation": "Madness Demon"
+        }
       },
       "Devout§Succubus": {
         "assets": {
@@ -2195,8 +2193,7 @@
             ],
             "statType": "numeric"
           }
-        },
-        "designation": "Succubus"
+        }
       },
       "Devout§Tallyman": {
         "assets": {
@@ -2259,8 +2256,7 @@
             "tracked": true,
             "dynamic": true
           }
-        },
-        "designation": "Tallyman"
+        }
       },
       "Devout§Void Demon": {
         "assets": {
@@ -2317,8 +2313,7 @@
             "tracked": true,
             "dynamic": true
           }
-        },
-        "designation": "Void Demon"
+        }
       },
       "Essence§Cursed Touch": {
         "classification": "Essence",
@@ -2327,8 +2322,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Once per battle, the demon may choose to replace one dice from a Combat Attack roll made against them with a 1.",
-        "designation": "Cursed Touch"
+        "text": "Once per battle, the demon may choose to replace one dice from a Combat Attack roll made against them with a 1."
       },
       "Essence§Empowerment": {
         "classification": "Essence",
@@ -2337,8 +2331,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Once applied to a demon, they automatically evolve into their next form (if they are lesser, they advance to greater, if they are greater, they advance to superior). If this Essence is applied to a Leader or a superior demon, they may increase a single ability by 1.",
-        "designation": "Empowerment"
+        "text": "Once applied to a demon, they automatically evolve into their next form (if they are lesser, they advance to greater, if they are greater, they advance to superior). If this Essence is applied to a Leader or a superior demon, they may increase a single ability by 1."
       },
       "Essence§Eternal Mind": {
         "classification": "Essence",
@@ -2347,8 +2340,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When you roll your activation dice, you may select\none dice and reroll it if your Leader has not been slain.",
-        "designation": "Eternal Mind"
+        "text": "When you roll your activation dice, you may select\none dice and reroll it if your Leader has not been slain."
       },
       "Essence§Explosive Spirit": {
         "classification": "Essence",
@@ -2357,8 +2349,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When your Leader is slain, you may roll your Combat\nDice. Each roll of 4+ deals 1 damage to each demon within 3” of your slain Leader. No Soul Dice is granted when this Leader is slain.",
-        "designation": "Explosive Spirit"
+        "text": "When your Leader is slain, you may roll your Combat\nDice. Each roll of 4+ deals 1 damage to each demon within 3” of your slain Leader. No Soul Dice is granted when this Leader is slain."
       },
       "Essence§Life": {
         "classification": "Essence",
@@ -2367,8 +2358,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Once per battle, the demon may call upon this Essence when they activate. If they do so, they may heal 1d3 damage.",
-        "designation": "Life"
+        "text": "Once per battle, the demon may call upon this Essence when they activate. If they do so, they may heal 1d3 damage."
       },
       "Essence§Luck": {
         "classification": "Essence",
@@ -2377,8 +2367,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Once per battle, the demon may choose to replace any one dice they roll as part of a Combat roll with a 6.",
-        "designation": "Luck"
+        "text": "Once per battle, the demon may choose to replace any one dice they roll as part of a Combat roll with a 6."
       },
       "Essence§Mending Soul": {
         "classification": "Essence",
@@ -2387,8 +2376,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When rolling on the Soul Loss table after the battle to determine the fate of your demons, you may reroll one fate roll for your cabal.",
-        "designation": "Mending Soul"
+        "text": "When rolling on the Soul Loss table after the battle to determine the fate of your demons, you may reroll one fate roll for your cabal."
       },
       "Essence§Poisoned Soul": {
         "classification": "Essence",
@@ -2397,8 +2385,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When your Leader is making a Combat Defense roll,\nif they roll any natural 6, the attacker suffers 2 damage.",
-        "designation": "Poisoned Soul"
+        "text": "When your Leader is making a Combat Defense roll,\nif they roll any natural 6, the attacker suffers 2 damage."
       },
       "Essence§Regenerating Soul": {
         "classification": "Essence",
@@ -2407,8 +2394,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When your Leader activates, they heal 1 Life.\nThis has no effect if your Leader is at maximum Life.",
-        "designation": "Regenerating Soul"
+        "text": "When your Leader activates, they heal 1 Life.\nThis has no effect if your Leader is at maximum Life."
       },
       "Essence§Skirmish Spirit": {
         "classification": "Essence",
@@ -2417,8 +2403,7 @@
             "Leader Essence"
           ]
         },
-        "text": "If your Leader uses Running Skirmish, their Move\nability increases by 3\" for that movement.",
-        "designation": "Skirmish Spirit"
+        "text": "If your Leader uses Running Skirmish, their Move\nability increases by 3\" for that movement."
       },
       "Essence§Soul of Lightning": {
         "classification": "Essence",
@@ -2434,8 +2419,7 @@
             "tracked": true
           }
         },
-        "text": "Increases your Leader’s Move by 1\".",
-        "designation": "Soul of Lightning"
+        "text": "Increases your Leader’s Move by 1\"."
       },
       "Essence§Steadfast Soul": {
         "classification": "Essence",
@@ -2444,8 +2428,7 @@
             "Leader Essence"
           ]
         },
-        "text": "When your Leader uses Focused Combat, they may\nchoose to change the result of any one Combat Defense die to a 6.",
-        "designation": "Steadfast Soul"
+        "text": "When your Leader uses Focused Combat, they may\nchoose to change the result of any one Combat Defense die to a 6."
       },
       "Essence§The Duelist": {
         "classification": "Essence",
@@ -2454,8 +2437,7 @@
             "Reward Essence"
           ]
         },
-        "text": "When using the Focused Combat combat style, the demon’s Combat Score increases by an additional 1.",
-        "designation": "The Duelist"
+        "text": "When using the Focused Combat combat style, the demon’s Combat Score increases by an additional 1."
       },
       "Essence§The Old Lords": {
         "classification": "Essence",
@@ -2480,8 +2462,7 @@
             "statType": "numeric",
             "visibility": "hidden"
           }
-        },
-        "designation": "The Old Lords"
+        }
       },
       "Essence§The Ram": {
         "classification": "Essence",
@@ -2490,8 +2471,7 @@
             "Reward Essence"
           ]
         },
-        "text": "When this demon uses the Charge combat style, any Combat Attack dice that results in a natural 6 deals 2 damage instead of 1.",
-        "designation": "The Ram"
+        "text": "When this demon uses the Charge combat style, any Combat Attack dice that results in a natural 6 deals 2 damage instead of 1."
       },
       "Essence§The Skirmisher": {
         "classification": "Essence",
@@ -2500,8 +2480,7 @@
             "Reward Essence"
           ]
         },
-        "text": "When using the Running Skirmish combat style, the demon increases their *Move* by 3 inches.",
-        "designation": "The Skirmisher"
+        "text": "When using the Running Skirmish combat style, the demon increases their *Move* by 3 inches."
       },
       "Essence§The Void": {
         "classification": "Essence",
@@ -2510,8 +2489,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Once per battle, when the demon activates, instead of moving, they may be removed from the battlefield. If you do so, set them anywhere with 12” of their previous position.",
-        "designation": "The Void"
+        "text": "Once per battle, when the demon activates, instead of moving, they may be removed from the battlefield. If you do so, set them anywhere with 12” of their previous position."
       },
       "Essence§The Wanderer": {
         "classification": "Essence",
@@ -2520,8 +2498,7 @@
             "Reward Essence"
           ]
         },
-        "text": "Whenever the demon makes a roll to determine the effects of terrain, they may roll twice and select whichever result they wish.",
-        "designation": "The Wanderer"
+        "text": "Whenever the demon makes a roll to determine the effects of terrain, they may roll twice and select whichever result they wish."
       },
       "Essence§Unyielding Essence": {
         "classification": "Essence",
@@ -2537,38 +2514,31 @@
             "tracked": true
           }
         },
-        "text": "Increases your Leader’s Life by 2.",
-        "designation": "Unyielding Essence"
+        "text": "Increases your Leader’s Life by 2."
       },
       "Leader Bonus§Breaking the Rules": {
         "classification": "Leader Bonus",
-        "text": "The first time your Leader would be reduced to 0 Life, they are not. Any additional damage they suffer is negated from that attack and they are instead at 1 Life.",
-        "designation": "Breaking the Rules"
+        "text": "The first time your Leader would be reduced to 0 Life, they are not. Any additional damage they suffer is negated from that attack and they are instead at 1 Life."
       },
       "Leader Bonus§Imperious Nature": {
         "classification": "Leader Bonus",
-        "text": "Your Leader's natural majesty and power is hard for others to overcome. Reduce the Combat Attack dice of any enemy attacking your Leader by 1.",
-        "designation": "Imperious Nature"
+        "text": "Your Leader's natural majesty and power is hard for others to overcome. Reduce the Combat Attack dice of any enemy attacking your Leader by 1."
       },
       "Leader Bonus§Maddening Insight": {
         "classification": "Leader Bonus",
-        "text": "When rolling initiative, as long as your Leader is alive, you may reroll any number of your initiative dice.",
-        "designation": "Maddening Insight"
+        "text": "When rolling initiative, as long as your Leader is alive, you may reroll any number of your initiative dice."
       },
       "Leader Bonus§One with Nothing": {
         "classification": "Leader Bonus",
-        "text": "Once per game, when your Leader activates, before any actions or move are taken, you may remove them from the game. During your next turn, you may allocate initiative to your Leader and replace them on the board anywhere more than 3” away from an enemy. The Leader may then act as normal for that activation.",
-        "designation": "One with Nothing"
+        "text": "Once per game, when your Leader activates, before any actions or move are taken, you may remove them from the game. During your next turn, you may allocate initiative to your Leader and replace them on the board anywhere more than 3” away from an enemy. The Leader may then act as normal for that activation."
       },
       "Leader Bonus§Quick Escape": {
         "classification": "Leader Bonus",
-        "text": "The first time in a turn an enemy moves within 1” of your Leader, if your Leader has not yet activated, you may remove an unspent activation dice. If you do so, your Leader may immediately activate before the enemy makes any attacks and take their turn. They may only move during this turn.",
-        "designation": "Quick Escape"
+        "text": "The first time in a turn an enemy moves within 1” of your Leader, if your Leader has not yet activated, you may remove an unspent activation dice. If you do so, your Leader may immediately activate before the enemy makes any attacks and take their turn. They may only move during this turn."
       },
       "Leader Bonus§Rich in Soul": {
         "classification": "Leader Bonus",
-        "text": "Your Leader begins with a bonus Essence (you may choose two instead of one at creation).",
-        "designation": "Rich in Soul"
+        "text": "Your Leader begins with a bonus Essence (you may choose two instead of one at creation)."
       },
       "Leader§Schemer": {
         "assets": {
@@ -2596,8 +2566,7 @@
             "value": 8,
             "statType": "numeric"
           }
-        },
-        "designation": "Schemer"
+        }
       },
       "Leader§Warrior": {
         "assets": {
@@ -2625,8 +2594,7 @@
             "value": 6,
             "statType": "numeric"
           }
-        },
-        "designation": "Warrior"
+        }
       },
       "Leader§Zealot": {
         "assets": {
@@ -2654,8 +2622,7 @@
             "value": 7,
             "statType": "numeric"
           }
-        },
-        "designation": "Zealot"
+        }
       },
       "Minion§Armored Demon": {
         "assets": {
@@ -2707,8 +2674,7 @@
             "value": 4,
             "statType": "numeric"
           }
-        },
-        "designation": "Armored Demon"
+        }
       },
       "Minion§Corpulent Demon": {
         "assets": {
@@ -2761,8 +2727,7 @@
             "value": 4,
             "statType": "numeric"
           }
-        },
-        "designation": "Corpulent Demon"
+        }
       },
       "Minion§Lord of Flame": {
         "assets": {
@@ -2806,8 +2771,7 @@
             ],
             "statType": "numeric"
           }
-        },
-        "designation": "Lord of Flame"
+        }
       },
       "Minion§Marquess d'Winter": {
         "assets": {
@@ -2855,8 +2819,7 @@
             "value": 4,
             "statType": "numeric"
           }
-        },
-        "designation": "Marquess d'Winter"
+        }
       },
       "Minion§Mephit": {
         "assets": {
@@ -2914,8 +2877,7 @@
             ],
             "statType": "numeric"
           }
-        },
-        "designation": "Mephit"
+        }
       },
       "Minion§Serpent Knight": {
         "assets": {
@@ -2961,8 +2923,7 @@
             "value": 7,
             "statType": "numeric"
           }
-        },
-        "designation": "Serpent Knight"
+        }
       },
       "Minion§Shadow King": {
         "assets": {
@@ -3006,8 +2967,7 @@
             ],
             "statType": "numeric"
           }
-        },
-        "designation": "Shadow King"
+        }
       },
       "Minion§Slaughter Fiend": {
         "assets": {
@@ -3062,8 +3022,7 @@
             "value": 5,
             "statType": "numeric"
           }
-        },
-        "designation": "Slaughter Fiend"
+        }
       },
       "Minion§Spined Demon": {
         "assets": {
@@ -3122,8 +3081,7 @@
             "value": 6,
             "statType": "numeric"
           }
-        },
-        "designation": "Spined Demon"
+        }
       },
       "Minion§Tentacle Beast": {
         "assets": {
@@ -3177,8 +3135,7 @@
             "value": 8,
             "statType": "numeric"
           }
-        },
-        "designation": "Tentacle Beast"
+        }
       },
       "Minion§Torture Master": {
         "assets": {
@@ -3226,8 +3183,7 @@
             "value": 6,
             "statType": "numeric"
           }
-        },
-        "designation": "Torture Master"
+        }
       },
       "Minion§Venom Queen": {
         "assets": {
@@ -3268,8 +3224,7 @@
             "value": 5,
             "statType": "numeric"
           }
-        },
-        "designation": "Venom Queen"
+        }
       },
       "Relic§Armor of Fortitude": {
         "classification": "Relic",
@@ -3285,8 +3240,7 @@
             "statType": "numeric"
           }
         },
-        "text": "Increase the demon’s Life by 2 when they are wearing this relic.",
-        "designation": "Armor of Fortitude"
+        "text": "Increase the demon’s Life by 2 when they are wearing this relic."
       },
       "Relic§Armor of Gleaming": {
         "classification": "Relic",
@@ -3295,8 +3249,7 @@
             "Reward Relic"
           ]
         },
-        "text": "Once per battle, the wearer may call upon this armor when an enemy within 1” makes a Combat Attack roll. If they do, the enemy halves the number of dice they roll for that Combat Attack roll.",
-        "designation": "Armor of Gleaming"
+        "text": "Once per battle, the wearer may call upon this armor when an enemy within 1” makes a Combat Attack roll. If they do, the enemy halves the number of dice they roll for that Combat Attack roll."
       },
       "Relic§Axe of Black Blood": {
         "classification": "Relic",
@@ -3305,8 +3258,7 @@
             "Leader Relic"
           ]
         },
-        "text": "This demon increases their Combat score by 1 for Combat Attack rolls.",
-        "designation": "Axe of Black Blood"
+        "text": "This demon increases their Combat score by 1 for Combat Attack rolls."
       },
       "Relic§Blood Stained Gauntlet": {
         "classification": "Relic",
@@ -3315,8 +3267,7 @@
             "Reward Relic"
           ]
         },
-        "text": "When the bearer makes a Combat Defense roll, any result of a natural 6 also deals 1 damage to the attacker.",
-        "designation": "Blood Stained Gauntlet"
+        "text": "When the bearer makes a Combat Defense roll, any result of a natural 6 also deals 1 damage to the attacker."
       },
       "Relic§Boots of Leaping": {
         "classification": "Relic",
@@ -3325,8 +3276,7 @@
             "Leader Relic"
           ]
         },
-        "text": "This demon may ignore other demons when moving as though they had Fly. The demon may not end their move on another demon.",
-        "designation": "Boots of Leaping"
+        "text": "This demon may ignore other demons when moving as though they had Fly. The demon may not end their move on another demon."
       },
       "Relic§Bracers of Unparalleled Defense": {
         "classification": "Relic",
@@ -3335,8 +3285,7 @@
             "Reward Relic"
           ]
         },
-        "text": "Once per battle, when making a Combat Defense roll, the bearer may activate this item. If they do, then all rolls of 5+ are considered a successful Combat Defense roll until the bearer’s next activation.",
-        "designation": "Bracers of Unparalleled Defense"
+        "text": "Once per battle, when making a Combat Defense roll, the bearer may activate this item. If they do, then all rolls of 5+ are considered a successful Combat Defense roll until the bearer’s next activation."
       },
       "Relic§Cloak of Flight": {
         "classification": "Relic",
@@ -3381,8 +3330,7 @@
             ]
           }
         },
-        "text": "The demon’s Move gains the Fly type.",
-        "designation": "Cloak of Flight"
+        "text": "The demon’s Move gains the Fly type."
       },
       "Relic§Gem of Healing": {
         "classification": "Relic",
@@ -3391,8 +3339,7 @@
             "Reward Relic"
           ]
         },
-        "text": "Once per battle, the bearer may call upon the power of this gem when they activate. If they do, they heal 1d3 damage.",
-        "designation": "Gem of Healing"
+        "text": "Once per battle, the bearer may call upon the power of this gem when they activate. If they do, they heal 1d3 damage."
       },
       "Relic§Hammer of Thunder": {
         "classification": "Relic",
@@ -3401,8 +3348,7 @@
             "Leader Relic"
           ]
         },
-        "text": "When this demon makes a Combat Attack roll, if any of the dice result in a natural 6, all enemies within 3” of this demon suffer 2 damage.",
-        "designation": "Hammer of Thunder"
+        "text": "When this demon makes a Combat Attack roll, if any of the dice result in a natural 6, all enemies within 3” of this demon suffer 2 damage."
       },
       "Relic§Infernal Armor": {
         "classification": "Relic",
@@ -3411,8 +3357,7 @@
             "Leader Relic"
           ]
         },
-        "text": "Whenever this demon suffers damage as a result of a Combat Attack, reduce the damage this demon suffers by 1.",
-        "designation": "Infernal Armor"
+        "text": "Whenever this demon suffers damage as a result of a Combat Attack, reduce the damage this demon suffers by 1."
       },
       "Relic§Leech": {
         "classification": "Relic",
@@ -3421,8 +3366,7 @@
             "Reward Relic"
           ]
         },
-        "text": "When making a Combat Attack roll, the bearer of this weapon may choose to suffer up to 3 damage. If they do, they add the same number of dice to their Combat Attack roll.",
-        "designation": "Leech"
+        "text": "When making a Combat Attack roll, the bearer of this weapon may choose to suffer up to 3 damage. If they do, they add the same number of dice to their Combat Attack roll."
       },
       "Relic§Lucky Charm": {
         "classification": "Relic",
@@ -3431,8 +3375,7 @@
             "Reward Relic"
           ]
         },
-        "text": "Lucky Charm: When making a Combat roll, the demon possessing this relic may reroll a single 1 from amongst their results.",
-        "designation": "Lucky Charm"
+        "text": "Lucky Charm: When making a Combat roll, the demon possessing this relic may reroll a single 1 from amongst their results."
       },
       "Relic§Necklace of Adaptation": {
         "classification": "Relic",
@@ -3441,8 +3384,7 @@
             "Leader Relic"
           ]
         },
-        "text": "This demon may roll twice when making a check for any terrain and select either result.",
-        "designation": "Necklace of Adaptation"
+        "text": "This demon may roll twice when making a check for any terrain and select either result."
       },
       "Relic§Plate of Rime Ice": {
         "classification": "Relic",
@@ -3451,8 +3393,7 @@
             "Leader Relic"
           ]
         },
-        "text": "When this demon makes a Combat Defense roll, if any of the dice result in a natural 6, the enemy reduces their Movement score to 0 as long as this demon remains within 1⁄2 inch of that model.",
-        "designation": "Plate of Rime Ice"
+        "text": "When this demon makes a Combat Defense roll, if any of the dice result in a natural 6, the enemy reduces their Movement score to 0 as long as this demon remains within 1⁄2 inch of that model."
       },
       "Relic§Reliquary": {
         "classification": "Relic",
@@ -3461,8 +3402,7 @@
             "Reward Relic"
           ]
         },
-        "text": "Once per battle, when this demon activates, they may choose to increase their Move or Combat ability by 1 for the duration of that activation.",
-        "designation": "Reliquary"
+        "text": "Once per battle, when this demon activates, they may choose to increase their Move or Combat ability by 1 for the duration of that activation."
       },
       "Relic§Screaming Shield": {
         "classification": "Relic",
@@ -3471,8 +3411,7 @@
             "Leader Relic"
           ]
         },
-        "text": "This demon may never be hit by anything lower than a 3+ (they may not be hit on 2).",
-        "designation": "Screaming Shield"
+        "text": "This demon may never be hit by anything lower than a 3+ (they may not be hit on 2)."
       },
       "Relic§Soul Drinker": {
         "classification": "Relic",
@@ -3481,8 +3420,7 @@
             "Leader Relic"
           ]
         },
-        "text": "When this demon makes a Combat Attack roll, each natural roll of 6 results in 2 damage instead of 1. If this demon’s attacks slay an enemy demon, the Leader heals 1 damage.",
-        "designation": "Soul Drinker"
+        "text": "When this demon makes a Combat Attack roll, each natural roll of 6 results in 2 damage instead of 1. If this demon’s attacks slay an enemy demon, the Leader heals 1 damage."
       },
       "Relic§Soul Razor": {
         "classification": "Relic",
@@ -3491,8 +3429,7 @@
             "Reward Relic"
           ]
         },
-        "text": "When the demon wielding this weapon slays an enemy, they may roll a d6. On a 4+, they gain an additional Soul Dice.",
-        "designation": "Soul Razor"
+        "text": "When the demon wielding this weapon slays an enemy, they may roll a d6. On a 4+, they gain an additional Soul Dice."
       },
       "Relic§Token of Luck": {
         "classification": "Relic",
@@ -3501,8 +3438,7 @@
             "Leader Relic"
           ]
         },
-        "text": "Once per round, this demon may reroll a single dice. This may not be used for the initiative roll.",
-        "designation": "Token of Luck"
+        "text": "Once per round, this demon may reroll a single dice. This may not be used for the initiative roll."
       },
       "Roster§Cabal": {
         "allowed": {
@@ -4534,27 +4470,22 @@
             ],
             "dynamic": true
           }
-        },
-        "designation": "Cabal"
+        }
       },
       "Soul Loss§Madness": {
-        "classification": "Soul Loss",
-        "designation": "Madness"
+        "classification": "Soul Loss"
       },
       "Special Ability§A Worthy Sacrifice": {
         "classification": "Special Ability",
-        "text": "Once per game, you may destroy any friendly demon within 3” of this model. If you do so, the Lord of the Pit heals an amount of life equal to the destroyed demon's current life (you gain a Soul Dice as normal for slaying the demon).",
-        "designation": "A Worthy Sacrifice"
+        "text": "Once per game, you may destroy any friendly demon within 3” of this model. If you do so, the Lord of the Pit heals an amount of life equal to the destroyed demon's current life (you gain a Soul Dice as normal for slaying the demon)."
       },
       "Special Ability§Balance the Scales": {
         "classification": "Special Ability",
-        "text": "When the enemy spends a Soul Dice, you may roll a dice. On the result of a 4+, you gain one Soul Dice (immediately roll a dice and add it to your playsheet as though you had slain a demon).",
-        "designation": "Balance the Scales"
+        "text": "When the enemy spends a Soul Dice, you may roll a dice. On the result of a 4+, you gain one Soul Dice (immediately roll a dice and add it to your playsheet as though you had slain a demon)."
       },
       "Special Ability§Burn it All": {
         "classification": "Special Ability",
-        "text": "When any Empty demon is within 1” of an objective or a piece of terrain no larger than 4” by 4”, you may roll your Combat Attack dice instead of attacking. If you do so and roll at least two 6s, then that objective or piece of terrain is destroyed (in the case of terrain, remove the terrain and replace it with rubble of a similar size no more than 1” high).",
-        "designation": "Burn it All"
+        "text": "When any Empty demon is within 1” of an objective or a piece of terrain no larger than 4” by 4”, you may roll your Combat Attack dice instead of attacking. If you do so and roll at least two 6s, then that objective or piece of terrain is destroyed (in the case of terrain, remove the terrain and replace it with rubble of a similar size no more than 1” high)."
       },
       "Special Ability§Charismatic Leader": {
         "classification": "Special Ability",
@@ -4589,103 +4520,83 @@
               }
             ]
           }
-        },
-        "designation": "Charismatic Leader"
+        }
       },
       "Special Ability§Combat Master": {
         "classification": "Special Ability",
-        "text": "Whenever the Warrior makes a Combat roll (Attack or Defense), they may choose to change the value of any one combat dice to 6.",
-        "designation": "Combat Master"
+        "text": "Whenever the Warrior makes a Combat roll (Attack or Defense), they may choose to change the value of any one combat dice to 6."
       },
       "Special Ability§Disorder": {
         "classification": "Special Ability",
-        "text": "The Madness Demon starts the battle with a Disorder score of 0. Every time during the game any Combat roll includes triple 1s (it must be a triple – quadruples, etc. do not count), the Disorder score increases by 1. The Madness Demon may add the Disorder score to their Combat Ability when making Combat Defense rolls.",
-        "designation": "Disorder"
+        "text": "The Madness Demon starts the battle with a Disorder score of 0. Every time during the game any Combat roll includes triple 1s (it must be a triple – quadruples, etc. do not count), the Disorder score increases by 1. The Madness Demon may add the Disorder score to their Combat Ability when making Combat Defense rolls."
       },
       "Special Ability§Enforcing the Rules": {
         "classification": "Special Ability",
-        "text": "Once per round, when an enemy demon makes a Combat Attack against a Judges demon, you may choose to Enforce the Rules. If you do, the attacker may not benefit from or activate any Special Abilities as part of the attack.",
-        "designation": "Enforcing the Rules"
+        "text": "Once per round, when an enemy demon makes a Combat Attack against a Judges demon, you may choose to Enforce the Rules. If you do, the attacker may not benefit from or activate any Special Abilities as part of the attack."
       },
       "Special Ability§Flying": {
         "classification": "Special Ability",
-        "text": "This demon ignores vertical distance and area terrain when moving. When the demon ends its move, it will suffer any effect of terrain it lands on. Demons may not land on another model.",
-        "designation": "Flying"
+        "text": "This demon ignores vertical distance and area terrain when moving. When the demon ends its move, it will suffer any effect of terrain it lands on. Demons may not land on another model."
       },
       "Special Ability§Frenzy": {
         "classification": "Special Ability",
-        "text": "Whenever the Zealot makes a Combat Attack roll, they increase their combat score by 2. If they are attacking an enemy Leader, they instead increase their combat score by 3.",
-        "designation": "Frenzy"
+        "text": "Whenever the Zealot makes a Combat Attack roll, they increase their combat score by 2. If they are attacking an enemy Leader, they instead increase their combat score by 3."
       },
       "Special Ability§Grappling Arms": {
         "classification": "Special Ability",
-        "text": "Enemy demons within 1” of any Tentacle Beast reduce their Combat Ability by 1.",
-        "designation": "Grappling Arms"
+        "text": "Enemy demons within 1” of any Tentacle Beast reduce their Combat Ability by 1."
       },
       "Special Ability§Heed the Lash": {
         "classification": "Special Ability",
-        "text": "When the Torture Master attacks, each Combat Attack dice that results in a 6 reduces either the Move, Life or Combat of the target by 1 for the rest of the game. When you reduce Life in this way, both their maximum and current Life ability are reduced by this amount.",
-        "designation": "Heed the Lash"
+        "text": "When the Torture Master attacks, each Combat Attack dice that results in a 6 reduces either the Move, Life or Combat of the target by 1 for the rest of the game. When you reduce Life in this way, both their maximum and current Life ability are reduced by this amount."
       },
       "Special Ability§Ignition": {
         "classification": "Special Ability",
-        "text": "When the Lord of Flame attacks, deal 1 damage to all demons within 3” of the Lord of Flame for each natural 6 rolled as part of the Combat Attack roll.",
-        "designation": "Ignition"
+        "text": "When the Lord of Flame attacks, deal 1 damage to all demons within 3” of the Lord of Flame for each natural 6 rolled as part of the Combat Attack roll."
       },
       "Special Ability§Impaling Charge": {
         "classification": "Special Ability",
-        "text": "When the Spined Demon uses Charge, they may reroll up to 3 dice from their Combat Attack roll.",
-        "designation": "Impaling Charge"
+        "text": "When the Spined Demon uses Charge, they may reroll up to 3 dice from their Combat Attack roll."
       },
       "Special Ability§Infected with Madness": {
         "classification": "Special Ability",
-        "text": "Once per round, when an enemy is making a Combat Attack roll within 3” of the Madness Demon, before the roll is made, the Madness Demon can change the Combat Attack ability of the enemy to his own. This exchange lasts until the end of the round.",
-        "designation": "Infected with Madness"
+        "text": "Once per round, when an enemy is making a Combat Attack roll within 3” of the Madness Demon, before the roll is made, the Madness Demon can change the Combat Attack ability of the enemy to his own. This exchange lasts until the end of the round."
       },
       "Special Ability§Iniquity": {
         "classification": "Special Ability",
-        "text": "Succubus starts the battle with an Iniquity score of 0. Every time a friendly model slays a demon, increase the Iniquity score by 1. Whenever damage is dealt to the Succubus, you may reduce the damage by an amount equal to or less than the Succubus’ current Iniquity score. If you do, reduce the succubus current Iniquity score by an amount equal to the damage prevented.",
-        "designation": "Iniquity"
+        "text": "Succubus starts the battle with an Iniquity score of 0. Every time a friendly model slays a demon, increase the Iniquity score by 1. Whenever damage is dealt to the Succubus, you may reduce the damage by an amount equal to or less than the Succubus’ current Iniquity score. If you do, reduce the succubus current Iniquity score by an amount equal to the damage prevented."
       },
       "Special Ability§Justice": {
         "classification": "Special Ability",
-        "text": "The Executioner starts the battle with a Justice score of 0. Every time they slay an enemy model that has dealt any damage to your cabal, you gain 1 Justice. Each time you make a Combat Defense roll, you may increase the result of a single die by an amount equal to the Executioner’s current Justice.",
-        "designation": "Justice"
+        "text": "The Executioner starts the battle with a Justice score of 0. Every time they slay an enemy model that has dealt any damage to your cabal, you gain 1 Justice. Each time you make a Combat Defense roll, you may increase the result of a single die by an amount equal to the Executioner’s current Justice."
       },
       "Special Ability§Master Manipulator": {
         "classification": "Special Ability",
-        "text": "Whenever the Schemer activates, he may choose to remove one die from your set of activation dice when his turn is complete. If he does so, another demon within 12” may instead be activated and take their turn immediately. In addition, once per round, when an enemy demon would attack the Schemer, the Schemer may choose to remove one unspent activation die. If he does so, he may move. The attacker may still choose to attack any other target in range after this move is completed.",
-        "designation": "Master Manipulator"
+        "text": "Whenever the Schemer activates, he may choose to remove one die from your set of activation dice when his turn is complete. If he does so, another demon within 12” may instead be activated and take their turn immediately. In addition, once per round, when an enemy demon would attack the Schemer, the Schemer may choose to remove one unspent activation die. If he does so, he may move. The attacker may still choose to attack any other target in range after this move is completed."
       },
       "Special Ability§Melting Touch": {
         "classification": "Special Ability",
-        "text": "When the Venom Queen attacks, any enemy damaged suffers the same amount of damage dealt the next time they activate.",
-        "designation": "Melting Touch"
+        "text": "When the Venom Queen attacks, any enemy damaged suffers the same amount of damage dealt the next time they activate."
       },
       "Special Ability§Oblivion": {
         "classification": "Special Ability",
-        "text": "The Void Demon starts the battle with an Oblivion score of 0. Every time a model is slain, increase the Void Demon’s Oblivion score by 1. When moving, the Void Demon may instead be removed from the board and set-up anywhere within a number of inches equal to their move ability plus their Oblivion score.",
-        "designation": "Oblivion"
+        "text": "The Void Demon starts the battle with an Oblivion score of 0. Every time a model is slain, increase the Void Demon’s Oblivion score by 1. When moving, the Void Demon may instead be removed from the board and set-up anywhere within a number of inches equal to their move ability plus their Oblivion score."
       },
       "Special Ability§Off with their Head": {
         "classification": "Special Ability",
-        "text": "When making a Combat Attack roll against an enemy with 4 or less Life remaining, the Executioner may reroll any of their Combat Attack dice.",
-        "designation": "Off with their Head"
+        "text": "When making a Combat Attack roll against an enemy with 4 or less Life remaining, the Executioner may reroll any of their Combat Attack dice."
       },
       "Special Ability§One with Nothing": {
         "classification": "Special Ability",
-        "text": "Once per game, when the Void Demon is slain, it is instead not slain and may be placed anywhere on the board, more than 3” away from any enemies. If the Void Demon is set up in this way, it has 5 Life and may not be healed by any method.",
-        "designation": "One with Nothing"
+        "text": "Once per game, when the Void Demon is slain, it is instead not slain and may be placed anywhere on the board, more than 3” away from any enemies. If the Void Demon is set up in this way, it has 5 Life and may not be healed by any method."
       },
       "Special Ability§Paragons of Slaughter": {
         "classification": "Special Ability",
-        "text": "When the Slaughter Fiend uses Focused Combat, they gain +2 to their Combat ability for the Attack roll (they gain +1 to Combat Defense rolls as normal).",
-        "designation": "Paragons of Slaughter"
+        "text": "When the Slaughter Fiend uses Focused Combat, they gain +2 to their Combat ability for the Attack roll (they gain +1 to Combat Defense rolls as normal)."
       },
       "Special Ability§Pile of Flesh": {
         "classification": "Special Ability",
-        "text": "When the Corpulent Demon activates, they heal 2 damage.",
-        "designation": "Pile of Flesh"
+        "text": "When the Corpulent Demon activates, they heal 2 damage."
       },
       "Special Ability§Ready to Move": {
         "classification": "Special Ability",
@@ -4718,88 +4629,71 @@
               }
             ]
           }
-        },
-        "designation": "Ready to Move"
+        }
       },
       "Special Ability§Righteousness": {
         "classification": "Special Ability",
-        "text": "The Lord of the Pit starts the battle with a Righteousness score of 0. Every time they slay an enemy model, they gain 1 Righteousness. Each time you make a Combat Dice roll, you may increase the result of a single die by an amount equal to the Lord of the Pit’s current Righteousness.",
-        "designation": "Righteousness"
+        "text": "The Lord of the Pit starts the battle with a Righteousness score of 0. Every time they slay an enemy model, they gain 1 Righteousness. Each time you make a Combat Dice roll, you may increase the result of a single die by an amount equal to the Lord of the Pit’s current Righteousness."
       },
       "Special Ability§Shadow and Smoke": {
         "classification": "Special Ability",
-        "text": "Once per round, when the Shadow King is attacked, they may reduce all damage dealt to them by a single attacker to 0.",
-        "designation": "Shadow and Smoke"
+        "text": "Once per round, when the Shadow King is attacked, they may reduce all damage dealt to them by a single attacker to 0."
       },
       "Special Ability§Steely Skin": {
         "classification": "Special Ability",
-        "text": "When the Armored Demon rolls Combat Defense dice, they may choose to change the result of any one Combat Defense die to a 6.",
-        "designation": "Steely Skin"
+        "text": "When the Armored Demon rolls Combat Defense dice, they may choose to change the result of any one Combat Defense die to a 6."
       },
       "Special Ability§Sting and Move": {
         "classification": "Special Ability",
-        "text": "When using Running Skirmish, the Mephit may increase their Move ability by 3.",
-        "designation": "Sting and Move"
+        "text": "When using Running Skirmish, the Mephit may increase their Move ability by 3."
       },
       "Special Ability§Stinging Poison": {
         "classification": "Special Ability",
-        "text": "When the Serpent Knight attacks, each Combat Attack dice that results in a 6 deals 2 damage instead of 1.",
-        "designation": "Stinging Poison"
+        "text": "When the Serpent Knight attacks, each Combat Attack dice that results in a 6 deals 2 damage instead of 1."
       },
       "Special Ability§Tax": {
         "classification": "Special Ability",
-        "text": "The Tallyman starts the battle with a Tax score of 3. Every time a friendly model is slain, increase the Tax score of the Tallyman by 1. Whenever the Tallyman slays an enemy, you may roll a d6. If the result of that dice is less than or equal to the current Tax score, you gain an additional soul.",
-        "designation": "Tax"
+        "text": "The Tallyman starts the battle with a Tax score of 3. Every time a friendly model is slain, increase the Tax score of the Tallyman by 1. Whenever the Tallyman slays an enemy, you may roll a d6. If the result of that dice is less than or equal to the current Tax score, you gain an additional soul."
       },
       "Special Ability§Tip the Scales": {
         "classification": "Special Ability",
-        "text": "Each time you gain a Soul Dice, you may roll a d6. On a 5+, you gain one additional Soul Dice.",
-        "designation": "Tip the Scales"
+        "text": "Each time you gain a Soul Dice, you may roll a d6. On a 5+, you gain one additional Soul Dice."
       },
       "Special Ability§Too Charming": {
         "classification": "Special Ability",
-        "text": "Once per round, when the Succubus is within 3” of an enemy, as the demon’s action, they may Charm a single enemy. You may move that demon up to its normal Move ability and make a Combat Attack against any demon of your choice.",
-        "designation": "Too Charming"
+        "text": "Once per round, when the Succubus is within 3” of an enemy, as the demon’s action, they may Charm a single enemy. You may move that demon up to its normal Move ability and make a Combat Attack against any demon of your choice."
       },
       "Special Ability§Touch of Winter": {
         "classification": "Special Ability",
-        "text": "When another demon makes a Combat Attack roll against the Marquess d’Winter, increase the target number needed to hit by 1.",
-        "designation": "Touch of Winter"
+        "text": "When another demon makes a Combat Attack roll against the Marquess d’Winter, increase the target number needed to hit by 1."
       },
       "Special Ability§Unpredictable Defense": {
         "classification": "Special Ability",
-        "text": "When rolling your Combat Defense dice, if you roll any triples (only triples – quadruples, et al. do not count), you may deal an amount of damage back to the attacker equal to the face of the triple roll (i.e. if you roll three 4s, you deal 4 damage to the attacker). If you roll multiple triples (i.e. three 1s and three 5s), choose the highest face value and you deal that amount of damage.",
-        "designation": "Unpredictable Defense"
+        "text": "When rolling your Combat Defense dice, if you roll any triples (only triples – quadruples, et al. do not count), you may deal an amount of damage back to the attacker equal to the face of the triple roll (i.e. if you roll three 4s, you deal 4 damage to the attacker). If you roll multiple triples (i.e. three 1s and three 5s), choose the highest face value and you deal that amount of damage."
       },
       "Title§Backstabber": {
         "classification": "Title",
-        "text": "Whenever this demon slays a friendly model, roll a d6. On a result of a 5+, they gain an additional Soul Dice.",
-        "designation": "Backstabber"
+        "text": "Whenever this demon slays a friendly model, roll a d6. On a result of a 5+, they gain an additional Soul Dice."
       },
       "Title§Covetous": {
         "classification": "Title",
-        "text": "This demon may carry two Relics.",
-        "designation": "Covetous"
+        "text": "This demon may carry two Relics."
       },
       "Title§Destroyer": {
         "classification": "Title",
-        "text": "Once per battle, after slaying an enemy demon, this demon may immediately fight again, making a second Combat Attack roll against any other enemy in range.",
-        "designation": "Destroyer"
+        "text": "Once per battle, after slaying an enemy demon, this demon may immediately fight again, making a second Combat Attack roll against any other enemy in range."
       },
       "Title§End of Faith": {
         "classification": "Title",
-        "text": "Increase your Combat ability by 1 when fighting enemy Devout demons.",
-        "designation": "End of Faith"
+        "text": "Increase your Combat ability by 1 when fighting enemy Devout demons."
       },
       "Title§First to Fall": {
         "classification": "Title",
-        "text": "Increase the demon’s Move ability by 3 during their first activation.",
-        "designation": "First to Fall"
+        "text": "Increase the demon’s Move ability by 3 during their first activation."
       },
       "Title§Maladroit": {
         "classification": "Title",
-        "text": "Roll twice on the Soul Loss table, selecting either result.",
-        "designation": "Maladroit"
+        "text": "Roll twice on the Soul Loss table, selecting either result."
       },
       "Title§Pacifist": {
         "classification": "Title",
@@ -4856,18 +4750,15 @@
               }
             ]
           }
-        },
-        "designation": "Pacifist"
+        }
       },
       "Title§Regent Slayer": {
         "classification": "Title",
-        "text": "Increase your Combat ability by 1 when fighting enemy\nLeaders.",
-        "designation": "Regent Slayer"
+        "text": "Increase your Combat ability by 1 when fighting enemy\nLeaders."
       },
       "Title§Soul Stealer": {
         "classification": "Title",
-        "text": "When attacking an enemy with 2 Life or less, increase this demon’s Combat ability by 2.",
-        "designation": "Soul Stealer"
+        "text": "When attacking an enemy with 2 Life or less, increase this demon’s Combat ability by 2."
       },
       "Title§Survivor": {
         "classification": "Title",
@@ -4879,13 +4770,11 @@
             "visibility": "hidden"
           }
         },
-        "text": "Increase the demon’s Life ability by 1.",
-        "designation": "Survivor"
+        "text": "Increase the demon’s Life ability by 1."
       },
       "Title§Unstable Steps": {
         "classification": "Title",
-        "text": "This demon may roll twice when making a check for any terrain and select either result.",
-        "designation": "Unstable Steps"
+        "text": "This demon may roll twice when making a check for any terrain and select either result."
       },
       "Title§Usurper": {
         "classification": "Title",
@@ -4924,16 +4813,12 @@
               }
             ]
           }
-        },
-        "designation": "Usurper"
+        }
       },
       "Titles§Titles": {
-        "classification": "Titles",
-        "designation": "Titles"
+        "classification": "Titles"
       }
     },
     "gameModes": {}
-  },
-  "revision": "0.1",
-  "notes": "This manifest is provided for the purposes of testing *Rosterizer* and is not intended for distribution."
+  }
 }
