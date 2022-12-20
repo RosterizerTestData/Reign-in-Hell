@@ -268,7 +268,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "1",
+                "value": 1,
                 "iterations": 1
               }
             ]
@@ -316,7 +316,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "2",
+                "value": 2,
                 "iterations": 1
               }
             ]
@@ -364,7 +364,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "3",
+                "value": 3,
                 "iterations": 1
               }
             ]
@@ -412,7 +412,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "4",
+                "value": 4,
                 "iterations": 1
               }
             ]
@@ -459,7 +459,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "5",
+                "value": 5,
                 "iterations": 1
               }
             ]
@@ -533,7 +533,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "1",
+                "value": 1,
                 "iterations": 1
               }
             ]
@@ -580,7 +580,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "2",
+                "value": 2,
                 "iterations": 1
               }
             ]
@@ -627,7 +627,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "3",
+                "value": 3,
                 "iterations": 1
               }
             ]
@@ -674,7 +674,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "4",
+                "value": 4,
                 "iterations": 1
               }
             ]
@@ -720,7 +720,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "5",
+                "value": 5,
                 "iterations": 1
               }
             ]
@@ -1089,7 +1089,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "1",
+                "value": 1,
                 "iterations": 1
               }
             ]
@@ -1137,7 +1137,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "2",
+                "value": 2,
                 "iterations": 1
               }
             ]
@@ -1185,7 +1185,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "3",
+                "value": 3,
                 "iterations": 1
               }
             ]
@@ -1232,7 +1232,7 @@
                   ]
                 ],
                 "actionType": "set",
-                "value": "4",
+                "value": 4,
                 "iterations": 1
               }
             ]
@@ -1285,7 +1285,7 @@
                     "value"
                   ]
                 ],
-                "value": "1",
+                "value": 1,
                 "operator": "AND",
                 "not": false
               },
@@ -1397,7 +1397,7 @@
                     "value"
                   ]
                 ],
-                "value": "0",
+                "value": 0,
                 "operator": "AND",
                 "not": false
               }
@@ -1482,7 +1482,7 @@
                     "value"
                   ]
                 ],
-                "value": "1",
+                "value": 1,
                 "operator": "AND",
                 "not": false
               }
@@ -2387,7 +2387,7 @@
             "Leader Essence"
           ]
         },
-        "text": "If your Leader uses Running Skirmish, their Move\nability increases by 3\" for that movement."
+        "text": "If your Leader uses Running Skirmish, their Move\nability increases by 3″ for that movement."
       },
       "Essence§Soul of Lightning": {
         "keywords": {
@@ -2402,7 +2402,7 @@
             "tracked": true
           }
         },
-        "text": "Increases your Leader’s Move by 1\"."
+        "text": "Increases your Leader’s Move by 1″."
       },
       "Essence§Steadfast Soul": {
         "keywords": {
@@ -4616,7 +4616,7 @@
                     "value"
                   ]
                 ],
-                "value": "1",
+                "value": 1,
                 "operator": "AND",
                 "not": false
               }
