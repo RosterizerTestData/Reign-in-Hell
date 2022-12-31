@@ -6,6 +6,7 @@
   "publisher": "Snarling Badger Studios",
   "url": "https://www.snarlingbadger.com/reigninhell",
   "notes": "This manifest is provided for the purposes of testing *Rosterizer* and is not intended for distribution.",
+  "wip":false,
   "manifest": {
     "assetTaxonomy": {
       "Demon": {
@@ -2717,7 +2718,7 @@
           "Evolution": {
             "ranks": {
               "0": {
-                "label": "Superior",
+                "format": "Superior",
                 "order": 0
               }
             },
@@ -2909,7 +2910,7 @@
           "Evolution": {
             "ranks": {
               "0": {
-                "label": "Superior",
+                "format": "Superior",
                 "order": 0
               }
             },
@@ -3164,7 +3165,7 @@
           "Evolution": {
             "ranks": {
               "0": {
-                "label": "Superior",
+                "format": "Superior",
                 "order": 0
               }
             },
