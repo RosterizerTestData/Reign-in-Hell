@@ -1,12 +1,12 @@
 {
   "name": "Reign in Hell",
-  "revision": "0.1",
+  "revision": "0.2.0",
   "game": "Reign in Hell",
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
   "url": "https://www.snarlingbadger.com/reigninhell",
   "notes": "This manifest is provided for the purposes of testing *Rosterizer* and is not intended for distribution.",
-  "wip":false,
+  "wip": false,
   "manifest": {
     "assetTaxonomy": {
       "Demon": {
@@ -125,7 +125,126 @@
             "dynamic": true
           }
         },
-        "templateClass": ""
+        "templateClass": "",
+        "rules": {
+          "notCampaign": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Campaign",
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "OR",
+            "order": 11,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    [
+                      "Adv",
+                      "Evolution",
+                      "XP"
+                    ],
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "hidden",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    [
+                      "Combat",
+                      "Life",
+                      "Move"
+                    ],
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": false,
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Move",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Move",
+                  "processed",
+                  "numeric",
+                  "default"
+                ],
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Combat",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Combat",
+                  "processed",
+                  "numeric",
+                  "default"
+                ],
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Life",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": [
+                  "{self}",
+                  "stats",
+                  "Life",
+                  "processed",
+                  "numeric",
+                  "default"
+                ],
+                "iterations": 1
+              }
+            ]
+          }
+        }
       },
       "Devout": {
         "rules": {
@@ -1275,95 +1394,6 @@
           "Unique": true
         },
         "rules": {
-          "Renouncement": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Renounce",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 14,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "[",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": [
-                  "{self}",
-                  "rules",
-                  "Renouncement",
-                  "evals",
-                  "1",
-                  "result",
-                  "string"
-                ],
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": "]",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": [
-                  "{self}",
-                  "item"
-                ],
-                "iterations": 1
-              }
-            ]
-          },
           "Title allowance": {
             "evals": [
               {
@@ -1491,6 +1521,108 @@
             "failState": "error",
             "evaluate": "OR",
             "order": 17
+          },
+          "Renouncement": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Renounce",
+                    "value"
+                  ]
+                ],
+                "value": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "operator": "AND",
+                "not": false,
+                "actionable": false
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "OR",
+            "order": 14,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "[",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": [
+                  "{self}",
+                  "rules",
+                  "Renouncement",
+                  "evals",
+                  "1",
+                  "result",
+                  "string"
+                ],
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "actionType": "modify",
+                "value": "]",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": [
+                  "{self}",
+                  "item"
+                ],
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "active",
+                "iterations": 1
+              }
+            ]
           }
         },
         "stats": {
@@ -1810,51 +1942,6 @@
               }
             ]
           },
-          "Covetous rule": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "tally",
-                    "Relic"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "tally",
-                    "Essence"
-                  ]
-                ],
-                "min": 3,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Covetous",
-                "iterations": 1
-              }
-            ]
-          },
           "Maladroit rule": {
             "evals": [
               {
@@ -1901,50 +1988,125 @@
                 "iterations": 1
               }
             ]
+          },
+          "Covetous rule": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Relic"
+                  ]
+                ],
+                "min": 1,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "tally",
+                    "Essence"
+                  ]
+                ],
+                "min": 3,
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 15,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Title§Covetous",
+                "iterations": 1
+              }
+            ]
           }
         },
         "stats": {
-          "Consecutive Slain": {
-            "value": 0,
+          "Consecutive Pacifist": {
             "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
+          },
+          "Consecutive Slain": {
+            "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
+            "visibility": "active",
+            "dynamic": true,
+            "tracked": false
           },
           "Consecutive Survival": {
-            "value": 0,
             "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
           },
           "First Slain by Enemy": {
-            "value": 0,
             "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
           },
           "Slay Enemy Devout": {
-            "value": 0,
             "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
           },
           "Slay Enemy Leader": {
-            "value": 0,
             "statType": "numeric",
+            "increment": {
+              "value": 1
+            },
+            "value": 0,
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
           },
           "Slay Friendly Leader": {
-            "value": 0,
             "statType": "numeric",
-            "visibility": "active",
-            "dynamic": true
-          },
-          "Consecutive Pacifist": {
+            "increment": {
+              "value": 1
+            },
             "value": 0,
-            "statType": "numeric",
             "visibility": "active",
-            "dynamic": true
+            "dynamic": true,
+            "tracked": false
           }
         }
       }
@@ -1968,26 +2130,6 @@
             "value": 8,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "When making a *Combat Attack* roll, if the Executioner rolls three 6s, the attack deals double damage."
-              },
-              "superior": {
-                "order": 2,
-                "text": "When making a *Combat Attack* roll, if the Executioner rolls three 6s, the attack deals double damage.",
-                "tracking": {
-                  "Combat": 1,
-                  "Justice score": 1
-                }
-              }
-            }
-          },
           "Justice score": {
             "value": 0,
             "label": "Justice",
@@ -2004,6 +2146,25 @@
           "Move": {
             "value": 5,
             "statType": "numeric"
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "text": "When making a *Combat Attack* roll, if the Executioner rolls three 6s, the attack deals double damage."
+              },
+              "superior": {
+                "order": 2,
+                "prepend": true,
+                "tracking": {
+                  "Combat": 1,
+                  "Justice score": 1
+                }
+              }
+            },
+            "value": "-",
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2096,12 +2257,16 @@
             "tracked": true,
             "dynamic": true
           },
+          "Life": {
+            "value": 11,
+            "statType": "numeric"
+          },
+          "Move": {
+            "value": 5,
+            "statType": "numeric"
+          },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
-              "-": {
-                "order": 0
-              },
               "greater": {
                 "order": 1,
                 "text": "The Madness Demon begins the game with a *Disorder* score of 1.",
@@ -2111,22 +2276,18 @@
               },
               "superior": {
                 "order": 2,
-                "text": "The Madness Demon begins the game with a *Disorder* score of 1.\n\nIncrease the Madness Demon's *Life* ability and *Move* ability by 1.",
+                "text": "Increase the Madness Demon's *Life* ability and *Move* ability by 1.",
+                "prepend": true,
                 "tracking": {
                   "Disorder score": 1,
                   "Move": 1,
                   "Life": 1
                 }
               }
-            }
-          },
-          "Life": {
-            "value": 11,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 5,
-            "statType": "numeric"
+            },
+            "value": "-",
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2210,31 +2371,6 @@
             "value": 5,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "Increase the *Life* ability and *Combat* ability by 1.",
-                "tracking": {
-                  "Life": 1,
-                  "Combat": 1
-                }
-              },
-              "superior": {
-                "order": 2,
-                "text": "Increase the *Life* ability and *Combat* ability by 1.\n\nThe Tallyman begins the game with a *Tax* score\nof 4.",
-                "tracking": {
-                  "Life": 1,
-                  "Combat": 1,
-                  "Tax score": 4
-                }
-              }
-            }
-          },
           "Life": {
             "value": 11,
             "statType": "numeric"
@@ -2251,6 +2387,28 @@
             "groupOrder": 2,
             "tracked": true,
             "dynamic": true
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "tracking": {
+                  "Life": 1,
+                  "Combat": 1
+                }
+              },
+              "superior": {
+                "order": 2,
+                "tracking": {
+                  "Life": 1,
+                  "Combat": 1,
+                  "Tax score": 4
+                }
+              }
+            },
+            "value": "-",
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2272,25 +2430,6 @@
             "value": 7,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "The Void Demon does not suffer any negative effects of area terrain (i.e. it can not be damaged, nor suffer any penalties from such terrain)."
-              },
-              "superior": {
-                "order": 2,
-                "text": "The Void Demon does not suffer any negative effects of area terrain (i.e. it can not be damaged, nor suffer any penalties from such terrain).",
-                "tracking": {
-                  "Oblivion score": 2
-                }
-              }
-            }
-          },
           "Life": {
             "value": 10,
             "statType": "numeric"
@@ -2307,6 +2446,24 @@
             "groupOrder": 2,
             "tracked": true,
             "dynamic": true
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "text": "The Void Demon does not suffer any negative effects of area terrain (i.e. it can not be damaged, nor suffer any penalties from such terrain)."
+              },
+              "superior": {
+                "order": 2,
+                "prepend": true,
+                "tracking": {
+                  "Oblivion score": 2
+                }
+              }
+            },
+            "value": "-",
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2612,26 +2769,6 @@
             "value": 22,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "When using *Steely Skin*, the Iron Demon may change the result of 2 *Combat* dice to a 6."
-              },
-              "superior": {
-                "order": 2,
-                "text": "When using *Steely Skin*, the Iron Demon may change the result of 2 *Combat* dice to a 6.",
-                "tracking": {
-                  "Combat": 1,
-                  "Life": 1
-                }
-              }
-            }
-          },
           "Life": {
             "value": 13,
             "statType": "numeric"
@@ -2639,6 +2776,24 @@
           "Move": {
             "value": 4,
             "statType": "numeric"
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "text": "When using *Steely Skin*, the Iron Demon may change the result of 2 *Combat* dice to a 6."
+              },
+              "superior": {
+                "order": 2,
+                "prepend": true,
+                "tracking": {
+                  "Combat": 1,
+                  "Life": 1
+                }
+              }
+            },
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2805,29 +2960,6 @@
             "value": 16,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "Increase the *Move* ability by 1.",
-                "tracking": {
-                  "Move": 1
-                }
-              },
-              "superior": {
-                "order": 2,
-                "text": "Increase the *Move* ability by 1.\n\nIncrease the *Move* ability and the *Combat* ability by 1.",
-                "tracking": {
-                  "Move": 1,
-                  "Combat": 1
-                }
-              }
-            }
-          },
           "Life": {
             "value": 7,
             "statType": "numeric"
@@ -2838,6 +2970,25 @@
               "bat-wing"
             ],
             "statType": "numeric"
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "tracking": {
+                  "Move": 1
+                }
+              },
+              "superior": {
+                "order": 2,
+                "tracking": {
+                  "Move": 1,
+                  "Combat": 1
+                }
+              }
+            },
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -2950,29 +3101,6 @@
             "value": 21,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "greater": {
-                "order": 1,
-                "text": "Increase the *Combat* ability by 1.",
-                "tracking": {
-                  "Combat": 1
-                }
-              },
-              "superior": {
-                "order": 2,
-                "text": "Increase the *Combat* ability by 1.\n\nIncrease the *Combat* ability and *Life* by 1.",
-                "tracking": {
-                  "Combat": 1,
-                  "Life": 1
-                }
-              }
-            }
-          },
           "Life": {
             "value": 10,
             "statType": "numeric"
@@ -2980,6 +3108,25 @@
           "Move": {
             "value": 5,
             "statType": "numeric"
+          },
+          "Evolution": {
+            "ranks": {
+              "greater": {
+                "order": 1,
+                "tracking": {
+                  "Combat": 1
+                }
+              },
+              "superior": {
+                "order": 2,
+                "tracking": {
+                  "Combat": 1,
+                  "Life": 1
+                }
+              }
+            },
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -3115,22 +3262,6 @@
             "value": 27,
             "statType": "numeric"
           },
-          "Evolution": {
-            "statType": "rank",
-            "ranks": {
-              "-": {
-                "order": 0
-              },
-              "superior": {
-                "order": 1,
-                "text": "Increase the *Combat* ability and *Life* ability by 1.",
-                "tracking": {
-                  "Combat": 1,
-                  "Life": 1
-                }
-              }
-            }
-          },
           "Life": {
             "value": 10,
             "statType": "numeric"
@@ -3138,6 +3269,19 @@
           "Move": {
             "value": 6,
             "statType": "numeric"
+          },
+          "Evolution": {
+            "ranks": {
+              "superior": {
+                "order": 1,
+                "tracking": {
+                  "Combat": 1,
+                  "Life": 1
+                }
+              }
+            },
+            "visibility": "normal",
+            "tracked": false
           }
         }
       },
@@ -3404,7 +3548,7 @@
                     "value"
                   ]
                 ],
-                "value": "warrior",
+                "value": "Warrior",
                 "operator": "AND",
                 "not": false
               }
@@ -3437,7 +3581,7 @@
                     "value"
                   ]
                 ],
-                "value": "schemer",
+                "value": "Schemer",
                 "operator": "AND",
                 "not": false
               }
@@ -3470,7 +3614,7 @@
                     "value"
                   ]
                 ],
-                "value": "zealot",
+                "value": "Zealot",
                 "operator": "AND",
                 "not": false
               }
@@ -3492,7 +3636,7 @@
               }
             ]
           },
-          "earth trait": {
+          "earthTrait": {
             "evals": [
               {
                 "paths": [
@@ -3503,7 +3647,7 @@
                     "value"
                   ]
                 ],
-                "value": "earth",
+                "value": "Earth-bound",
                 "operator": "AND",
                 "not": false
               }
@@ -3525,7 +3669,7 @@
               }
             ]
           },
-          "demented trait": {
+          "dementedTrait": {
             "evals": [
               {
                 "paths": [
@@ -3536,7 +3680,7 @@
                     "value"
                   ]
                 ],
-                "value": "demented",
+                "value": "Demented",
                 "operator": "AND",
                 "not": false
               }
@@ -3569,7 +3713,7 @@
                     "value"
                   ]
                 ],
-                "value": "brokers",
+                "value": "Brokers",
                 "operator": "AND",
                 "not": false
               }
@@ -3605,7 +3749,7 @@
               }
             ]
           },
-          "brokers trait": {
+          "brokersTrait": {
             "evals": [
               {
                 "paths": [
@@ -3616,7 +3760,7 @@
                     "value"
                   ]
                 ],
-                "value": "brokers",
+                "value": "Brokers",
                 "operator": "AND",
                 "not": false
               }
@@ -3649,7 +3793,7 @@
                     "value"
                   ]
                 ],
-                "value": "judges",
+                "value": "Judges",
                 "operator": "AND",
                 "not": false
               }
@@ -3685,7 +3829,7 @@
               }
             ]
           },
-          "judges trait": {
+          "judgesTrait": {
             "evals": [
               {
                 "paths": [
@@ -3696,7 +3840,7 @@
                     "value"
                   ]
                 ],
-                "value": "judges",
+                "value": "Judges",
                 "operator": "AND",
                 "not": false
               }
@@ -3729,7 +3873,7 @@
                     "value"
                   ]
                 ],
-                "value": "empty",
+                "value": "The Empty",
                 "operator": "AND",
                 "not": false
               }
@@ -3765,7 +3909,7 @@
               }
             ]
           },
-          "empty trait": {
+          "emptyTrait": {
             "evals": [
               {
                 "paths": [
@@ -3776,7 +3920,7 @@
                     "value"
                   ]
                 ],
-                "value": "empty",
+                "value": "The Empty",
                 "operator": "AND",
                 "not": false
               }
@@ -3809,7 +3953,7 @@
                     "value"
                   ]
                 ],
-                "value": "lords",
+                "value": "Lords of Hell",
                 "operator": "AND",
                 "not": false
               }
@@ -3856,7 +4000,7 @@
                     "value"
                   ]
                 ],
-                "value": "earth",
+                "value": "Earth-bound",
                 "operator": "AND",
                 "not": false
               }
@@ -3903,7 +4047,7 @@
                     "value"
                   ]
                 ],
-                "value": "demented",
+                "value": "Demented",
                 "operator": "AND",
                 "not": false
               }
@@ -3939,7 +4083,7 @@
               }
             ]
           },
-          "lords trait": {
+          "lordsTrait": {
             "evals": [
               {
                 "paths": [
@@ -3950,7 +4094,7 @@
                     "value"
                   ]
                 ],
-                "value": "lords",
+                "value": "Lords of Hell",
                 "operator": "AND",
                 "not": false
               }
@@ -3972,7 +4116,7 @@
               }
             ]
           },
-          "Standard cost max 200": {
+          "standardCostMax200": {
             "evals": [
               {
                 "paths": [
@@ -3983,7 +4127,7 @@
                     "value"
                   ]
                 ],
-                "value": "standard",
+                "value": "Standard",
                 "operator": "AND",
                 "not": false
               }
@@ -4031,7 +4175,7 @@
             "failState": "warning",
             "evaluate": "OR"
           },
-          "Campaign": {
+          "campaign": {
             "evals": [
               {
                 "paths": [
@@ -4042,7 +4186,7 @@
                     "value"
                   ]
                 ],
-                "value": "campaign",
+                "value": "Campaign",
                 "operator": "AND",
                 "not": false
               }
@@ -4076,7 +4220,7 @@
                     "value"
                   ]
                 ],
-                "value": "campaign",
+                "value": "Campaign",
                 "operator": "AND",
                 "not": true
               },
@@ -4107,7 +4251,7 @@
                     "value"
                   ]
                 ],
-                "value": "campaign",
+                "value": "Campaign",
                 "operator": "AND",
                 "not": false
               }
@@ -4192,7 +4336,36 @@
               }
             ]
           },
-          "Not Campaign": {
+          "You must select a Leader and a Philosophy.": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "processed",
+                    "rank",
+                    "current"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "processed",
+                    "rank",
+                    "current"
+                  ]
+                ],
+                "value": "-",
+                "operator": "OR",
+                "not": true
+              }
+            ],
+            "failState": "warning",
+            "evaluate": "OR"
+          },
+          "notCampaign": {
             "evals": [
               {
                 "paths": [
@@ -4203,13 +4376,15 @@
                     "value"
                   ]
                 ],
-                "value": "campaign",
+                "value": "Campaign",
                 "operator": "AND",
-                "not": true
+                "not": true,
+                "actionable": true
               }
             ],
             "failState": "pass",
             "evaluate": "OR",
+            "order": 11,
             "actions": [
               {
                 "paths": [
@@ -4247,37 +4422,32 @@
                 "actionType": "set",
                 "value": "hidden",
                 "iterations": 1
-              }
-            ]
-          },
-          "You must select a Leader and a Philosophy.": {
-            "evals": [
+              },
               {
                 "paths": [
                   [
                     "{self}",
+                    "assets",
+                    "classification",
+                    [
+                      "Minion",
+                      "Devout",
+                      "Leader"
+                    ],
                     "stats",
-                    "Philosophy",
-                    "processed",
-                    "rank",
-                    "current"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "Leader",
-                    "processed",
-                    "rank",
-                    "current"
+                    [
+                      "Combat",
+                      "Life",
+                      "Move"
+                    ],
+                    "dynamic"
                   ]
                 ],
-                "value": "-",
-                "operator": "OR",
-                "not": true
+                "actionType": "set",
+                "value": false,
+                "iterations": 1
               }
-            ],
-            "failState": "warning",
-            "evaluate": "OR"
+            ]
           }
         },
         "stats": {
@@ -4290,63 +4460,53 @@
             "max": 100,
             "statType": "numeric"
           },
-          "Game Size": {
-            "statType": "rank",
-            "ranks": {
-              "campaign": {
-                "order": 0,
-                "hotkey": "c",
-                "format": "Campaign"
-              },
-              "learning": {
-                "order": 1,
-                "hotkey": "l",
-                "format": "Learning"
-              },
-              "standard": {
-                "order": 2,
-                "hotkey": "s",
-                "format": "Standard"
-              }
-            },
+          "Soul Ledger": {
+            "statType": "numeric",
+            "value": 0,
+            "icons": [
+              "evil-book"
+            ],
             "dynamic": true
           },
           "Leader": {
             "statType": "rank",
+            "value": "-",
             "ranks": {
               "-": {
                 "order": 0
               },
-              "warrior": {
+              "Warrior": {
                 "order": 1,
                 "icons": [
                   "harpoon-trident"
                 ]
               },
-              "schemer": {
+              "Schemer": {
                 "order": 2,
                 "icons": [
                   "evil-fork"
                 ]
               },
-              "zealot": {
+              "Zealot": {
                 "order": 3,
                 "icons": [
                   "holy-symbol"
                 ]
               }
             },
-            "dynamic": true
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": false
           },
           "Philosophy": {
             "statType": "rank",
+            "value": "-",
             "ranks": {
               "-": {
                 "order": 0,
-                "icons": [],
                 "format": "-"
               },
-              "lords": {
+              "Lords of Hell": {
                 "order": 1,
                 "icons": [
                   "samara-mosque",
@@ -4354,7 +4514,7 @@
                 ],
                 "text": "**Lords of Hell**—Fighting to restore Hell's glory and old ways"
               },
-              "earth": {
+              "Earth-bound": {
                 "order": 2,
                 "icons": [
                   "skeleton-key",
@@ -4362,7 +4522,7 @@
                 ],
                 "text": "**Earth-bound**—Looking to escape Hell permanently for Earth"
               },
-              "demented": {
+              "Demented": {
                 "order": 3,
                 "icons": [
                   "scale-mail",
@@ -4370,7 +4530,7 @@
                 ],
                 "text": "**Demented**—Choosing to embrace the madness of Hell"
               },
-              "brokers": {
+              "Brokers": {
                 "order": 4,
                 "icons": [
                   "coins",
@@ -4378,7 +4538,7 @@
                 ],
                 "text": "**Brokers**—Trading and dealing in the currency of souls"
               },
-              "judges": {
+              "Judges": {
                 "order": 5,
                 "icons": [
                   "scroll-quill",
@@ -4386,7 +4546,7 @@
                 ],
                 "text": "**Judges**—Using and abusing the remaining rules for power"
               },
-              "empty": {
+              "The Empty": {
                 "order": 6,
                 "icons": [
                   "lightning-saber",
@@ -4395,19 +4555,90 @@
                 "text": "**The Empty**—Wanting to see Hell destroyed and unmade"
               }
             },
-            "dynamic": true
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": false
           },
-          "Soul Ledger": {
-            "statType": "numeric",
-            "value": 0,
-            "icons": [
-              "evil-book"
-            ],
-            "dynamic": true
+          "Game Size": {
+            "statType": "rank",
+            "value": "Campaign",
+            "ranks": {
+              "Campaign": {
+                "order": 0,
+                "hotkey": "c"
+              },
+              "Learning": {
+                "order": 1,
+                "hotkey": "l"
+              },
+              "Standard": {
+                "order": 2,
+                "hotkey": "s"
+              }
+            },
+            "visibility": "normal",
+            "dynamic": true,
+            "tracked": false
           }
         }
       },
       "Soul Loss§Madness": {
+        "stats": {
+          "Combat": {
+            "statType": "numeric",
+            "value": 3,
+            "visibility": "hidden",
+            "dynamic": false,
+            "tracked": true
+          }
+        },
+        "text": "This demon may never increase its experience, or wield a relic. The demon increases its Combat score by 3.",
+        "rules": {
+          "madness": {
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "XP",
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": false,
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "stats",
+                    "XP",
+                    "increment"
+                  ]
+                ],
+                "actionType": "set",
+                "value": null,
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "disallowed",
+                    "classifications"
+                  ]
+                ],
+                "actionType": "add",
+                "value": "Relic",
+                "iterations": 1
+              }
+            ]
+          }
+        }
       },
       "Special Ability§A Worthy Sacrifice": {
         "text": "Once per game, you may destroy any friendly demon within 3” of this model. If you do so, the Lord of the Pit heals an amount of life equal to the destroyed demon's current life (you gain a Soul Dice as normal for slaying the demon)."
@@ -4575,7 +4806,29 @@
         "text": "Whenever this demon slays a friendly model, roll a d6. On a result of a 5+, they gain an additional Soul Dice."
       },
       "Title§Covetous": {
-        "text": "This demon may carry two Relics."
+        "text": "",
+        "rules": {
+          "2relics": {
+            "failState": "pass",
+            "evaluate": "AND",
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{parent}",
+                    "{parent}",
+                    "stats",
+                    "Relic",
+                    "max"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 2,
+                "iterations": 1
+              }
+            ]
+          }
+        }
       },
       "Title§Destroyer": {
         "text": "Once per battle, after slaying an enemy demon, this demon may immediately fight again, making a second Combat Attack roll against any other enemy in range."
@@ -4604,7 +4857,7 @@
             "visibility": "hidden"
           }
         },
-        "text": "Reduce the demon's Combat ability by 1 and increase their Life ability by 2.",
+        "text": "",
         "rules": {
           "Renounce pacifism": {
             "evals": [
@@ -4660,7 +4913,7 @@
             "visibility": "hidden"
           }
         },
-        "text": "Increase the demon’s Life ability by 1."
+        "text": ""
       },
       "Title§Unstable Steps": {
         "text": "This demon may roll twice when making a check for any terrain and select either result."
@@ -4703,8 +4956,7 @@
           }
         }
       },
-      "Titles§Titles": {
-      }
+      "Titles§Titles": {}
     },
     "gameModes": {}
   }
