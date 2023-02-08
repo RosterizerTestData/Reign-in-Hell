@@ -1,6 +1,6 @@
 {
   "name": "Reign in Hell",
-  "revision": "0.2.0",
+  "revision": "0.2.1",
   "game": "Reign in Hell",
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
@@ -2586,19 +2586,25 @@
         },
         "stats": {
           "Combat": {
-            "value": 1,
             "statType": "numeric",
-            "visibility": "hidden"
+            "value": 1,
+            "visibility": "hidden",
+            "dynamic": false,
+            "tracked": true
           },
           "Life": {
-            "value": 1,
             "statType": "numeric",
-            "visibility": "hidden"
+            "value": 1,
+            "visibility": "hidden",
+            "dynamic": false,
+            "tracked": true
           },
           "Move": {
-            "value": 1,
             "statType": "numeric",
-            "visibility": "hidden"
+            "value": 1,
+            "visibility": "hidden",
+            "dynamic": false,
+            "tracked": true
           }
         }
       },
