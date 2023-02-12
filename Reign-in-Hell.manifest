@@ -1,6 +1,6 @@
 {
   "name": "Reign in Hell",
-  "revision": "0.2.1",
+  "revision": "0.2.2",
   "game": "Reign in Hell",
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
@@ -1356,6 +1356,214 @@
                 "iterations": 1
               }
             ]
+          },
+          "onlyLesserDemonsAreFree": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "keywords",
+                    "Keywords"
+                  ]
+                ],
+                "value": "Lesser Demon",
+                "contains": true,
+                "operator": "AND",
+                "not": true,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 8,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "0",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": false,
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "hidden",
+                "iterations": 1
+              }
+            ]
+          },
+          "HideOtherFrees": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "1",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 9,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "0",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "hidden",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": false,
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "1",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "active",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": true,
+                "iterations": 1
+              }
+            ]
+          },
+          "freeIsFree": {
+            "evals": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "1",
+                "operator": "AND",
+                "not": false,
+                "actionable": true
+              }
+            ],
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 9,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Cost",
+                    "value"
+                  ]
+                ],
+                "actionType": "set",
+                "value": 0,
+                "iterations": 1
+              }
+            ]
           }
         },
         "stats": {
@@ -1372,6 +1580,21 @@
           },
           "Evolution": {
             "value": null
+          },
+          "Free!": {
+            "statType": "rank",
+            "value": 0,
+            "ranks": {
+              "0": {
+                "order": 0
+              },
+              "1": {
+                "order": 1
+              }
+            },
+            "visibility": "hidden",
+            "dynamic": false,
+            "tracked": false
           }
         },
         "templateClass": "Evolver"
@@ -4683,6 +4906,45 @@
                 ],
                 "actionType": "modify",
                 "value": -1,
+                "iterations": 1
+              }
+            ]
+          },
+          "showFree": {
+            "failState": "pass",
+            "evaluate": "AND",
+            "order": 7,
+            "actions": [
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "actionType": "set",
+                "value": "always",
+                "iterations": 1
+              },
+              {
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "actionType": "set",
+                "value": true,
                 "iterations": 1
               }
             ]
