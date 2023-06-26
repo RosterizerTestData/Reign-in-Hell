@@ -26,129 +26,12 @@
         "assets": {
           "traits": []
         },
-        "stats": {
-          "Adv": {
-            "statType": "rank",
-            "ranks": {
-              "0": {
-                "order": 0,
-                "icons": [
-                  "square"
-                ]
-              },
-              "1": {
-                "order": 1,
-                "icons": [
-                  "inverted-dice-1"
-                ]
-              },
-              "2": {
-                "order": 2,
-                "icons": [
-                  "inverted-dice-2"
-                ]
-              },
-              "3": {
-                "order": 3,
-                "icons": [
-                  "inverted-dice-3"
-                ]
-              },
-              "4": {
-                "order": 4,
-                "icons": [
-                  "inverted-dice-4"
-                ]
-              },
-              "5": {
-                "order": 5,
-                "icons": [
-                  "inverted-dice-5"
-                ]
-              }
-            },
-            "statOrder": 2,
-            "group": "Progression",
-            "groupOrder": 9
-          },
-          "Combat": {
-            "value": 0,
-            "statOrder": 3,
-            "icons": [
-              "flaming-trident"
-            ],
-            "group": "Stats",
-            "tracked": true,
-            "statType": "numeric",
-            "dynamic": true
-          },
-          "Life": {
-            "value": 0,
-            "statOrder": 2,
-            "icons": [
-              "heart-drop"
-            ],
-            "group": "Stats",
-            "tracked": true,
-            "statType": "numeric",
-            "dynamic": true
-          },
-          "Move": {
-            "value": 0,
-            "statOrder": 1,
-            "icons": [
-              "bird-claw"
-            ],
-            "group": "Stats",
-            "tracked": true,
-            "statType": "numeric",
-            "dynamic": true
-          },
-          "Relic": {
-            "statType": "numeric",
-            "value": null,
-            "tracked": true,
-            "max": 1,
-            "visibility": "hidden"
-          },
-          "XP": {
-            "value": 0,
-            "statType": "numeric",
-            "increment": {
-              "value": 1
-            },
-            "icons": [
-              "progression"
-            ],
-            "group": "Progression",
-            "groupOrder": 9,
-            "dynamic": true
-          }
-        },
-        "templateClass": "",
         "rules": {
           "notCampaign": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{roster}",
-                    "stats",
-                    "Game Size",
-                    "value"
-                  ]
-                ],
-                "value": "Campaign",
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 11,
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -161,11 +44,11 @@
                     "visibility"
                   ]
                 ],
-                "actionType": "set",
-                "value": "hidden",
-                "iterations": 1
+                "value": "hidden"
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -178,11 +61,11 @@
                     "dynamic"
                   ]
                 ],
-                "actionType": "set",
-                "value": false,
-                "iterations": 1
+                "value": false
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -191,7 +74,6 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
                 "value": [
                   "{self}",
                   "stats",
@@ -199,10 +81,11 @@
                   "processed",
                   "numeric",
                   "default"
-                ],
-                "iterations": 1
+                ]
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -211,7 +94,6 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
                 "value": [
                   "{self}",
                   "stats",
@@ -219,10 +101,11 @@
                   "processed",
                   "numeric",
                   "default"
-                ],
-                "iterations": 1
+                ]
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -231,7 +114,6 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
                 "value": [
                   "{self}",
                   "stats",
@@ -239,307 +121,299 @@
                   "processed",
                   "numeric",
                   "default"
-                ],
-                "iterations": 1
+                ]
               }
-            ]
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{roster}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Campaign"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 11
           }
-        }
+        },
+        "stats": {
+          "Adv": {
+            "group": "Progression",
+            "groupOrder": 9,
+            "ranks": {
+              "0": {
+                "icons": [
+                  "square"
+                ],
+                "order": 0
+              },
+              "1": {
+                "icons": [
+                  "inverted-dice-1"
+                ],
+                "order": 1
+              },
+              "2": {
+                "icons": [
+                  "inverted-dice-2"
+                ],
+                "order": 2
+              },
+              "3": {
+                "icons": [
+                  "inverted-dice-3"
+                ],
+                "order": 3
+              },
+              "4": {
+                "icons": [
+                  "inverted-dice-4"
+                ],
+                "order": 4
+              },
+              "5": {
+                "icons": [
+                  "inverted-dice-5"
+                ],
+                "order": 5
+              }
+            },
+            "statOrder": 2,
+            "statType": "rank"
+          },
+          "Combat": {
+            "dynamic": true,
+            "group": "Stats",
+            "icons": [
+              "flaming-trident"
+            ],
+            "statOrder": 3,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0
+          },
+          "Life": {
+            "dynamic": true,
+            "group": "Stats",
+            "icons": [
+              "heart-drop"
+            ],
+            "statOrder": 2,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0
+          },
+          "Move": {
+            "dynamic": true,
+            "group": "Stats",
+            "icons": [
+              "bird-claw"
+            ],
+            "statOrder": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0
+          },
+          "Relic": {
+            "max": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": null,
+            "visibility": "hidden"
+          },
+          "XP": {
+            "dynamic": true,
+            "group": "Progression",
+            "groupOrder": 9,
+            "icons": [
+              "progression"
+            ],
+            "increment": {
+              "value": 1
+            },
+            "statType": "numeric",
+            "value": 0
+          }
+        },
+        "templateClass": ""
       },
       "Devout": {
         "rules": {
-          "Superior evolution": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "min": 18,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "value": "superior",
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 11,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "superior",
-                "iterations": 1
-              }
-            ]
-          },
-          "Greater evolution": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 17,
-                "min": 6,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "value": "-",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 11,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "greater",
-                "iterations": 1
-              }
-            ]
-          },
           "Devout adv 1": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
                 "max": 11,
                 "min": 6,
+                "not": false,
                 "operator": "AND",
-                "not": false
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
               },
               {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "tally",
                     "Usurper"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
+            "failState": "pass",
+            "order": 18
           },
           "Devout adv 2": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
                 "max": 17,
                 "min": 12,
+                "not": false,
                 "operator": "AND",
-                "not": false
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
               },
               {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "tally",
                     "Usurper"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1
-              }
-            ]
+            "failState": "pass",
+            "order": 18
           },
           "Devout adv 3": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
                 "max": 23,
                 "min": 18,
+                "not": false,
                 "operator": "AND",
-                "not": false
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
               },
               {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "tally",
                     "Usurper"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 3,
-                "iterations": 1
-              }
-            ]
+            "failState": "pass",
+            "order": 18
           },
           "Devout adv 4": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
                 "max": 29,
                 "min": 24,
+                "not": false,
                 "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 4,
-                "iterations": 1
-              }
-            ]
-          },
-          "Devout adv 5": {
-            "evals": [
-              {
                 "paths": [
                   [
                     "{self}",
@@ -547,29 +421,30 @@
                     "XP",
                     "value"
                   ]
-                ],
-                "min": 30,
-                "operator": "AND",
-                "not": false
+                ]
               },
               {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "tally",
                     "Usurper"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "AND",
-            "order": 18,
+            "failState": "pass",
+            "order": 18
+          },
+          "Devout adv 5": {
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -578,11 +453,136 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
-                "value": 5,
-                "iterations": 1
+                "value": 5
               }
-            ]
+            ],
+            "evals": [
+              {
+                "min": 30,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
+          },
+          "Greater evolution": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "greater"
+              }
+            ],
+            "evals": [
+              {
+                "max": 17,
+                "min": 6,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 11
+          },
+          "Superior evolution": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "superior"
+              }
+            ],
+            "evals": [
+              {
+                "min": 18,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "superior"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 11
           }
         },
         "templateClass": "Evolver",
@@ -595,403 +595,387 @@
         }
       },
       "Evolver": {
+        "rules": {
+          "Usurper adv 1": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "max": 9,
+                "min": 5,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          },
+          "Usurper adv 2": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "max": 14,
+                "min": 10,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          },
+          "Usurper adv 3": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
+                "max": 19,
+                "min": 15,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          },
+          "Usurper adv 4": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "max": 24,
+                "min": 20,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          },
+          "Usurper adv 5": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 5
+              }
+            ],
+            "evals": [
+              {
+                "min": 25,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
+          }
+        },
         "stats": {
           "Evolution": {
-            "statType": "rank",
+            "dynamic": true,
+            "group": "Progression",
+            "groupOrder": 9,
             "ranks": {
               "-": {
                 "order": 0
               }
             },
             "statOrder": 9,
-            "group": "Progression",
-            "groupOrder": 9,
-            "dynamic": true
+            "statType": "rank"
           }
         },
-        "templateClass": "Demon",
-        "rules": {
-          "Usurper adv 1": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 9,
-                "min": 5,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurper adv 2": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 14,
-                "min": 10,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurper adv 3": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 19,
-                "min": 15,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 3,
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurper adv 4": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 24,
-                "min": 20,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 4,
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurper adv 5": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "min": 25,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 5,
-                "iterations": 1
-              }
-            ]
-          }
-        }
+        "templateClass": "Demon"
       },
       "Leader": {
         "rules": {
           "Leader adv 1": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
                 "max": 10,
                 "min": 5,
+                "not": false,
                 "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "actions": [
-              {
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Adv",
+                    "XP",
                     "value"
                   ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
+                ]
               }
-            ]
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
           },
           "Leader adv 2": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
                 "max": 14,
                 "min": 10,
+                "not": false,
                 "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "actions": [
-              {
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Adv",
+                    "XP",
                     "value"
                   ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1
+                ]
               }
-            ]
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
           },
           "Leader adv 3": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
                 "max": 19,
                 "min": 15,
+                "not": false,
                 "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "actions": [
-              {
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Adv",
+                    "XP",
                     "value"
                   ]
-                ],
-                "actionType": "set",
-                "value": 3,
-                "iterations": 1
+                ]
               }
-            ]
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
           },
           "Leader adv 4": {
-            "evals": [
+            "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "XP",
+                    "Adv",
                     "value"
                   ]
                 ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
                 "max": 24,
                 "min": 20,
+                "not": false,
                 "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 4,
-                "iterations": 1
-              }
-            ]
-          },
-          "Leader adv 5": {
-            "evals": [
-              {
                 "paths": [
                   [
                     "{self}",
@@ -999,16 +983,17 @@
                     "XP",
                     "value"
                   ]
-                ],
-                "min": 25,
-                "operator": "AND",
-                "not": false
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "OR",
+            "failState": "pass"
+          },
+          "Leader adv 5": {
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -1017,15 +1002,32 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
-                "value": 5,
-                "iterations": 1
+                "value": 5
               }
-            ]
+            ],
+            "evals": [
+              {
+                "min": 25,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
           },
           "Select your Leader Relic.": {
             "evals": [
               {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{roster}",
@@ -1034,33 +1036,31 @@
                     "value"
                   ]
                 ],
-                "value": "campaign",
-                "operator": "AND",
-                "not": false
+                "value": "campaign"
               },
               {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "tally",
                     "Leader Relic"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
+                ]
               }
             ],
-            "failState": "error",
-            "evaluate": "OR"
+            "evaluate": "OR",
+            "failState": "error"
           }
         },
         "stats": {
           "Essence": {
-            "statType": "numeric",
-            "value": null,
-            "tracked": true,
             "min": 1,
+            "statType": "numeric",
+            "tracked": true,
+            "value": null,
             "visibility": "hidden"
           }
         },
@@ -1069,488 +1069,11 @@
       "Leader Bonus": {},
       "Minion": {
         "rules": {
-          "Greater evolution": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 20,
-                "min": 7,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "value": "-",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 11,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "greater",
-                "iterations": 1
-              }
-            ]
-          },
-          "Superior evolution": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "min": 21,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "value": "superior",
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 11,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Evolution",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "superior",
-                "iterations": 1
-              }
-            ]
-          },
-          "Minion adv 1": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 13,
-                "min": 7,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 1,
-                "iterations": 1
-              }
-            ]
-          },
-          "Minion adv 2": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 20,
-                "min": 14,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1
-              }
-            ]
-          },
-          "Minion adv 3": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "max": 27,
-                "min": 21,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 3,
-                "iterations": 1
-              }
-            ]
-          },
-          "Minion adv 4": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "XP",
-                    "value"
-                  ]
-                ],
-                "min": 28,
-                "operator": "AND",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Usurper"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 18,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Adv",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": 4,
-                "iterations": 1
-              }
-            ]
-          },
-          "onlyLesserDemonsAreFree": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "keywords",
-                    "Keywords"
-                  ]
-                ],
-                "value": "Lesser Demon",
-                "contains": true,
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 8,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "0",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "dynamic"
-                  ]
-                ],
-                "actionType": "set",
-                "value": false,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "hidden",
-                "iterations": 1
-              }
-            ]
-          },
-          "HideOtherFrees": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "value"
-                  ]
-                ],
-                "value": "1",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 9,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{roster}",
-                    "assets",
-                    "classification",
-                    "Minion",
-                    "stats",
-                    "Free!",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "0",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{roster}",
-                    "assets",
-                    "classification",
-                    "Minion",
-                    "stats",
-                    "Free!",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "hidden",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{roster}",
-                    "assets",
-                    "classification",
-                    "Minion",
-                    "stats",
-                    "Free!",
-                    "dynamic"
-                  ]
-                ],
-                "actionType": "set",
-                "value": false,
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "value"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "1",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "active",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "dynamic"
-                  ]
-                ],
-                "actionType": "set",
-                "value": true,
-                "iterations": 1
-              }
-            ]
-          },
           "freeIsFree": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Free!",
-                    "value"
-                  ]
-                ],
-                "value": "1",
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 9,
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -1559,31 +1082,507 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
-                "value": 0,
-                "iterations": 1
+                "value": 0
               }
-            ]
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "1"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 9
+          },
+          "Greater evolution": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "greater"
+              }
+            ],
+            "evals": [
+              {
+                "max": 20,
+                "min": 7,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 11
+          },
+          "HideOtherFrees": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "0"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{roster}",
+                    "assets",
+                    "classification",
+                    "Minion",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "value": false
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "1"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "value": "active"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "value": true
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "1"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 9
+          },
+          "Minion adv 1": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evals": [
+              {
+                "max": 13,
+                "min": 7,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
+          },
+          "Minion adv 2": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 2
+              }
+            ],
+            "evals": [
+              {
+                "max": 20,
+                "min": 14,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
+          },
+          "Minion adv 3": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 3
+              }
+            ],
+            "evals": [
+              {
+                "max": 27,
+                "min": 21,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
+          },
+          "Minion adv 4": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Adv",
+                    "value"
+                  ]
+                ],
+                "value": 4
+              }
+            ],
+            "evals": [
+              {
+                "min": 28,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Usurper"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 18
+          },
+          "onlyLesserDemonsAreFree": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "value"
+                  ]
+                ],
+                "value": "0"
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "dynamic"
+                  ]
+                ],
+                "value": false
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Free!",
+                    "visibility"
+                  ]
+                ],
+                "value": "hidden"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "contains": true,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "keywords",
+                    "Keywords"
+                  ]
+                ],
+                "value": "Lesser Demon"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 8
+          },
+          "Superior evolution": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "superior"
+              }
+            ],
+            "evals": [
+              {
+                "min": 21,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "XP",
+                    "value"
+                  ]
+                ]
+              },
+              {
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Evolution",
+                    "value"
+                  ]
+                ],
+                "value": "superior"
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 11
           }
         },
         "stats": {
           "Cost": {
-            "value": 0,
-            "statOrder": 3,
+            "group": "Cost",
+            "groupOrder": -1,
             "icons": [
               "spark-spirit"
             ],
-            "group": "Cost",
-            "groupOrder": -1,
+            "statOrder": 3,
+            "statType": "numeric",
             "tracked": true,
-            "statType": "numeric"
+            "value": 0
           },
           "Evolution": {
             "value": null
           },
           "Free!": {
-            "statType": "rank",
-            "value": 0,
+            "dynamic": false,
             "ranks": {
               "0": {
                 "order": 0
@@ -1592,9 +1591,10 @@
                 "order": 1
               }
             },
-            "visibility": "hidden",
-            "dynamic": false,
-            "tracked": false
+            "statType": "rank",
+            "tracked": false,
+            "value": 0,
+            "visibility": "hidden"
           }
         },
         "templateClass": "Evolver"
@@ -1617,32 +1617,34 @@
           "Unique": true
         },
         "rules": {
-          "Title allowance": {
+          "Only one of this title is allowed.": {
             "evals": [
               {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "designation"
                   ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
+                ]
               },
               {
+                "max": 1,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{roster}",
                     "tally",
                     "{0string}"
                   ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false
+                ]
               },
               {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
@@ -1651,16 +1653,120 @@
                     "value"
                   ]
                 ],
-                "value": 0,
-                "operator": "AND",
-                "not": false
+                "value": 1
               }
             ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 16,
+            "evaluate": "OR",
+            "failState": "error",
+            "order": 17
+          },
+          "Renouncement": {
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "["
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "rules",
+                  "Renouncement",
+                  "evals",
+                  "1",
+                  "result",
+                  "string"
+                ]
+              },
+              {
+                "actionType": "modify",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ],
+                "value": "]"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{parent}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "item"
+                ]
+              },
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "aspects",
+                    "Visibility"
+                  ]
+                ],
+                "value": "active"
+              }
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Renounce",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              },
+              {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "designation"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 14
+          },
+          "Title allowance": {
+            "actions": [
+              {
+                "actionType": "remove",
+                "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
@@ -1678,14 +1784,14 @@
                     "items"
                   ]
                 ],
-                "actionType": "remove",
                 "value": [
                   "{self}",
                   "item"
-                ],
-                "iterations": 1
+                ]
               },
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -1693,29 +1799,27 @@
                     "items"
                   ]
                 ],
-                "actionType": "add",
                 "value": [
                   "{self}",
                   "item"
-                ],
-                "iterations": 1
+                ]
               }
-            ]
-          },
-          "Only one of this title is allowed.": {
+            ],
             "evals": [
               {
+                "actionable": false,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "designation"
                   ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
+                ]
               },
               {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{roster}",
@@ -1723,11 +1827,11 @@
                     "{0string}"
                   ]
                 ],
-                "max": 1,
-                "operator": "AND",
-                "not": false
+                "value": 1
               },
               {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
@@ -1736,121 +1840,17 @@
                     "value"
                   ]
                 ],
-                "value": 1,
-                "operator": "AND",
-                "not": false
+                "value": 0
               }
             ],
-            "failState": "error",
-            "evaluate": "OR",
-            "order": 17
-          },
-          "Renouncement": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Renounce",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "operator": "AND",
-                "not": false,
-                "actionable": false
-              }
-            ],
+            "evaluate": "AND",
             "failState": "pass",
-            "evaluate": "OR",
-            "order": 14,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "[",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": [
-                  "{self}",
-                  "rules",
-                  "Renouncement",
-                  "evals",
-                  "1",
-                  "result",
-                  "string"
-                ],
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "designation"
-                  ]
-                ],
-                "actionType": "modify",
-                "value": "]",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{parent}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": [
-                  "{self}",
-                  "item"
-                ],
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "aspects",
-                    "Visibility"
-                  ]
-                ],
-                "actionType": "set",
-                "value": "active",
-                "iterations": 1
-              }
-            ]
+            "order": 16
           }
         },
         "stats": {
           "Renounce": {
-            "statType": "rank",
+            "dynamic": true,
             "ranks": {
               "0": {
                 "order": 0
@@ -1859,8 +1859,8 @@
                 "order": 1
               }
             },
-            "visibility": "active",
-            "dynamic": true
+            "statType": "rank",
+            "visibility": "active"
           }
         }
       },
@@ -1883,369 +1883,71 @@
           "Keywords": []
         },
         "rules": {
-          "Pacifist title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Pacifist",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Pacifist",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Pacifist",
-                "iterations": 1
-              }
-            ]
-          },
-          "Regent Slayer title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Enemy Leader",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Enemy Leader",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Regent Slayer",
-                "iterations": 1
-              }
-            ]
-          },
-          "End of Faith title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Enemy Devout",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Enemy Devout",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§End of Faith",
-                "iterations": 1
-              }
-            ]
-          },
-          "Survivor title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Survival",
-                    "value"
-                  ]
-                ],
-                "min": 3,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Survival",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Survivor",
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurper title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Friendly Leader",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Slay Friendly Leader",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Usurper",
-                "iterations": 1
-              }
-            ]
-          },
-          "First to Fall title": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "First Slain by Enemy",
-                    "value"
-                  ]
-                ],
-                "min": 2,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "First Slain by Enemy",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§First to Fall",
-                "iterations": 1
-              }
-            ]
-          },
-          "Maladroit rule": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Slain",
-                    "value"
-                  ]
-                ],
-                "min": 3,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 15,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Consecutive Slain",
-                    "icons"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "check-mark",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "allowed",
-                    "items"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Title§Maladroit",
-                "iterations": 1
-              }
-            ]
-          },
           "Covetous rule": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Covetous"
+              }
+            ],
             "evals": [
               {
+                "actionable": true,
+                "min": 1,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{parent}",
                     "tally",
                     "Relic"
                   ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
+                ]
               },
               {
+                "actionable": true,
+                "min": 3,
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{parent}",
                     "tally",
                     "Essence"
                   ]
-                ],
-                "min": 3,
-                "operator": "AND",
-                "not": false,
-                "actionable": true
+                ]
               }
             ],
-            "failState": "pass",
             "evaluate": "AND",
-            "order": 15,
+            "failState": "pass",
+            "order": 15
+          },
+          "End of Faith title": {
             "actions": [
               {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Enemy Devout",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -2253,83 +1955,381 @@
                     "items"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Title§Covetous",
-                "iterations": 1
+                "value": "Title§End of Faith"
               }
-            ]
+            ],
+            "evals": [
+              {
+                "min": 2,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Enemy Devout",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "First to Fall title": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "First Slain by Enemy",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§First to Fall"
+              }
+            ],
+            "evals": [
+              {
+                "min": 2,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "First Slain by Enemy",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "Maladroit rule": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Slain",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Maladroit"
+              }
+            ],
+            "evals": [
+              {
+                "min": 3,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Slain",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "Pacifist title": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Pacifist",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Pacifist"
+              }
+            ],
+            "evals": [
+              {
+                "min": 2,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Pacifist",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "Regent Slayer title": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Enemy Leader",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Regent Slayer"
+              }
+            ],
+            "evals": [
+              {
+                "min": 2,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Enemy Leader",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "Survivor title": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Survival",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Survivor"
+              }
+            ],
+            "evals": [
+              {
+                "min": 3,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Consecutive Survival",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
+          },
+          "Usurper title": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Friendly Leader",
+                    "icons"
+                  ]
+                ],
+                "value": "check-mark"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "allowed",
+                    "items"
+                  ]
+                ],
+                "value": "Title§Usurper"
+              }
+            ],
+            "evals": [
+              {
+                "min": 2,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Slay Friendly Leader",
+                    "value"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 15
           }
         },
         "stats": {
           "Consecutive Pacifist": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "Consecutive Slain": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "Consecutive Survival": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "First Slain by Enemy": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "Slay Enemy Devout": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "Slay Enemy Leader": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           },
           "Slay Friendly Leader": {
-            "statType": "numeric",
+            "dynamic": true,
             "increment": {
               "value": 1
             },
+            "statType": "numeric",
+            "tracked": false,
             "value": 0,
-            "visibility": "active",
-            "dynamic": true,
-            "tracked": false
+            "visibility": "active"
           }
         }
       }
@@ -2337,11 +2337,11 @@
     "assetCatalog": {
       "Devout§Executioner": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Justice",
             "Special Ability§Off with their Head"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2350,25 +2350,8 @@
         },
         "stats": {
           "Combat": {
-            "value": 8,
-            "statType": "numeric"
-          },
-          "Justice score": {
-            "value": 0,
-            "label": "Justice",
             "statType": "numeric",
-            "group": "Class",
-            "groupOrder": 2,
-            "tracked": true,
-            "dynamic": true
-          },
-          "Life": {
-            "value": 12,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 5,
-            "statType": "numeric"
+            "value": 8
           },
           "Evolution": {
             "ranks": {
@@ -2385,19 +2368,36 @@
                 }
               }
             },
+            "tracked": false,
             "value": "-",
-            "visibility": "normal",
-            "tracked": false
+            "visibility": "normal"
+          },
+          "Justice score": {
+            "dynamic": true,
+            "group": "Class",
+            "groupOrder": 2,
+            "label": "Justice",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 12
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 5
           }
         }
       },
       "Devout§Lord of the Pit": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Righteousness",
             "Special Ability§A Worthy Sacrifice"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2406,11 +2406,10 @@
         },
         "stats": {
           "Combat": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
                 "order": 0
@@ -2429,37 +2428,38 @@
                   "Righteousness score": 1
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Life": {
-            "value": 12,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 12
           },
           "Move": {
-            "value": 8,
             "icons": [
               "bat-wing"
             ],
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 8
           },
           "Righteousness score": {
-            "value": 0,
-            "label": "Righteousness",
-            "statType": "numeric",
+            "dynamic": true,
             "group": "Class",
             "groupOrder": 2,
+            "label": "Righteousness",
+            "statType": "numeric",
             "tracked": true,
-            "dynamic": true
+            "value": 0
           }
         }
       },
       "Devout§Madness Demon": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Disorder",
             "Special Ability§Infected with Madness"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2468,25 +2468,17 @@
         },
         "stats": {
           "Combat": {
-            "value": 3,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 3
           },
           "Disorder score": {
-            "value": 0,
-            "label": "Disorder",
-            "statType": "numeric",
+            "dynamic": true,
             "group": "Class",
             "groupOrder": 2,
+            "label": "Disorder",
+            "statType": "numeric",
             "tracked": true,
-            "dynamic": true
-          },
-          "Life": {
-            "value": 11,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 5,
-            "statType": "numeric"
+            "value": 0
           },
           "Evolution": {
             "ranks": {
@@ -2499,28 +2491,36 @@
               },
               "superior": {
                 "order": 2,
-                "text": "Increase the Madness Demon's *Life* ability and *Move* ability by 1.",
                 "prepend": true,
+                "text": "Increase the Madness Demon's *Life* ability and *Move* ability by 1.",
                 "tracking": {
                   "Disorder score": 1,
-                  "Move": 1,
-                  "Life": 1
+                  "Life": 1,
+                  "Move": 1
                 }
               }
             },
+            "tracked": false,
             "value": "-",
-            "visibility": "normal",
-            "tracked": false
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 11
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 5
           }
         }
       },
       "Devout§Succubus": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Iniquity",
             "Special Ability§Too Charming"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2529,11 +2529,10 @@
         },
         "stats": {
           "Combat": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 4
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
                 "order": 0
@@ -2551,38 +2550,39 @@
                   "Move": 2
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Iniquity Score": {
-            "value": 0,
-            "label": "Iniquity",
-            "statType": "numeric",
-            "statOrder": 0,
+            "dynamic": true,
             "group": "Class",
             "groupOrder": 2,
+            "label": "Iniquity",
+            "statOrder": 0,
+            "statType": "numeric",
             "tracked": true,
-            "dynamic": true
+            "value": 0
           },
           "Life": {
-            "value": 9,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 9
           },
           "Move": {
-            "value": 6,
             "icons": [
               "bat-wing"
             ],
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           }
         }
       },
       "Devout§Tallyman": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Tax",
             "Special Ability§Balance the Scales"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2591,57 +2591,57 @@
         },
         "stats": {
           "Combat": {
-            "value": 5,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 11,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 4,
-            "statType": "numeric"
-          },
-          "Tax score": {
-            "value": 3,
-            "label": "Tax",
             "statType": "numeric",
-            "group": "Class",
-            "groupOrder": 2,
-            "tracked": true,
-            "dynamic": true
+            "value": 5
           },
           "Evolution": {
             "ranks": {
               "greater": {
                 "order": 1,
                 "tracking": {
-                  "Life": 1,
-                  "Combat": 1
+                  "Combat": 1,
+                  "Life": 1
                 }
               },
               "superior": {
                 "order": 2,
                 "tracking": {
-                  "Life": 1,
                   "Combat": 1,
+                  "Life": 1,
                   "Tax score": 4
                 }
               }
             },
+            "tracked": false,
             "value": "-",
-            "visibility": "normal",
-            "tracked": false
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 11
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 4
+          },
+          "Tax score": {
+            "dynamic": true,
+            "group": "Class",
+            "groupOrder": 2,
+            "label": "Tax",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 3
           }
         }
       },
       "Devout§Void Demon": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Oblivion",
             "Special Ability§One with Nothing"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2650,25 +2650,8 @@
         },
         "stats": {
           "Combat": {
-            "value": 7,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 10,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 8,
-            "statType": "numeric"
-          },
-          "Oblivion score": {
-            "value": 0,
-            "label": "Oblivion",
             "statType": "numeric",
-            "group": "Class",
-            "groupOrder": 2,
-            "tracked": true,
-            "dynamic": true
+            "value": 7
           },
           "Evolution": {
             "ranks": {
@@ -2684,9 +2667,26 @@
                 }
               }
             },
+            "tracked": false,
             "value": "-",
-            "visibility": "normal",
-            "tracked": false
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 10
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 8
+          },
+          "Oblivion score": {
+            "dynamic": true,
+            "group": "Class",
+            "groupOrder": 2,
+            "label": "Oblivion",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0
           }
         }
       },
@@ -2778,9 +2778,9 @@
         },
         "stats": {
           "Move": {
-            "value": 1,
             "statType": "numeric",
-            "tracked": true
+            "tracked": true,
+            "value": 1
           }
         },
         "text": "Increases your Leader’s Move by 1″."
@@ -2809,25 +2809,25 @@
         },
         "stats": {
           "Combat": {
-            "statType": "numeric",
-            "value": 1,
-            "visibility": "hidden",
             "dynamic": false,
-            "tracked": true
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
           },
           "Life": {
-            "statType": "numeric",
-            "value": 1,
-            "visibility": "hidden",
             "dynamic": false,
-            "tracked": true
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
           },
           "Move": {
-            "statType": "numeric",
-            "value": 1,
-            "visibility": "hidden",
             "dynamic": false,
-            "tracked": true
+            "statType": "numeric",
+            "tracked": true,
+            "value": 1,
+            "visibility": "hidden"
           }
         }
       },
@@ -2871,9 +2871,9 @@
         },
         "stats": {
           "Life": {
-            "value": 2,
             "statType": "numeric",
-            "tracked": true
+            "tracked": true,
+            "value": 2
           }
         },
         "text": "Increases your Leader’s Life by 2."
@@ -2898,10 +2898,10 @@
       },
       "Leader§Schemer": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Master Manipulator"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2910,25 +2910,25 @@
         },
         "stats": {
           "Combat": {
-            "value": 5,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 5
           },
           "Life": {
-            "value": 11,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 11
           },
           "Move": {
-            "value": 8,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 8
           }
         }
       },
       "Leader§Warrior": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Combat Master"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2937,25 +2937,25 @@
         },
         "stats": {
           "Combat": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           },
           "Life": {
-            "value": 15,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 15
           },
           "Move": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           }
         }
       },
       "Leader§Zealot": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Frenzy"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2964,25 +2964,25 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Life": {
-            "value": 13,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 13
           },
           "Move": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           }
         }
       },
       "Minion§Armored Demon": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Steely Skin"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -2991,20 +2991,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 5,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 5
           },
           "Cost": {
-            "value": 22,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 13,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 22
           },
           "Evolution": {
             "ranks": {
@@ -3021,17 +3013,25 @@
                 }
               }
             },
-            "visibility": "normal",
-            "tracked": false
+            "tracked": false,
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 13
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 4
           }
         }
       },
       "Minion§Corpulent Demon": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Pile of Flesh"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3040,15 +3040,14 @@
         },
         "stats": {
           "Combat": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 4
           },
           "Cost": {
-            "value": 17,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 17
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
                 "order": 0
@@ -3066,24 +3065,25 @@
                   "Life": 2
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Life": {
-            "value": 15,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 15
           },
           "Move": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 4
           }
         }
       },
       "Minion§Lord of Flame": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Ignition"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3092,12 +3092,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           },
           "Cost": {
-            "value": 36,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 36
           },
           "Evolution": {
             "ranks": {
@@ -3109,24 +3109,24 @@
             "statType": "rank"
           },
           "Life": {
-            "value": 11,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 11
           },
           "Move": {
-            "value": 8,
             "icons": [
               "bat-wing"
             ],
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 8
           }
         }
       },
       "Minion§Marquess d'Winter": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Touch of Winter"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3135,19 +3135,18 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Cost": {
-            "value": 24,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 24
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
-                "order": 0,
-                "format": "-"
+                "format": "-",
+                "order": 0
               },
               "superior": {
                 "order": 1,
@@ -3156,24 +3155,25 @@
                   "Life": 1
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Life": {
-            "value": 11,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 11
           },
           "Move": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 4
           }
         }
       },
       "Minion§Mephit": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Sting and Move"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3182,23 +3182,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 3,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 3
           },
           "Cost": {
-            "value": 16,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 7,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 9,
-            "icons": [
-              "bat-wing"
-            ],
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 16
           },
           "Evolution": {
             "ranks": {
@@ -3211,22 +3200,33 @@
               "superior": {
                 "order": 2,
                 "tracking": {
-                  "Move": 1,
-                  "Combat": 1
+                  "Combat": 1,
+                  "Move": 1
                 }
               }
             },
-            "visibility": "normal",
-            "tracked": false
+            "tracked": false,
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 7
+          },
+          "Move": {
+            "icons": [
+              "bat-wing"
+            ],
+            "statType": "numeric",
+            "value": 9
           }
         }
       },
       "Minion§Serpent Knight": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Stinging Poison"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3235,15 +3235,14 @@
         },
         "stats": {
           "Combat": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           },
           "Cost": {
-            "value": 26,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 26
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
                 "order": 0
@@ -3254,24 +3253,25 @@
                   "Move": 2
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Life": {
-            "value": 11,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 11
           },
           "Move": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           }
         }
       },
       "Minion§Shadow King": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Shadow and Smoke"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3280,12 +3280,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Cost": {
-            "value": 33,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 33
           },
           "Evolution": {
             "ranks": {
@@ -3297,24 +3297,24 @@
             "statType": "rank"
           },
           "Life": {
-            "value": 10,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 10
           },
           "Move": {
-            "value": 7,
             "icons": [
               "bat-wing"
             ],
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           }
         }
       },
       "Minion§Slaughter Fiend": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Paragons of Slaughter"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3323,20 +3323,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Cost": {
-            "value": 21,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 10,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 5,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 21
           },
           "Evolution": {
             "ranks": {
@@ -3354,17 +3346,25 @@
                 }
               }
             },
-            "visibility": "normal",
-            "tracked": false
+            "tracked": false,
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 10
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 5
           }
         }
       },
       "Minion§Spined Demon": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Impaling Charge"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3378,15 +3378,15 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Cost": {
-            "value": 19,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 19
           },
           "Evolution": {
-            "statType": "rank",
+            "dynamic": true,
             "ranks": {
               "-": {
                 "order": 0
@@ -3405,24 +3405,24 @@
                 }
               }
             },
-            "dynamic": true
+            "statType": "rank"
           },
           "Life": {
-            "value": 7,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 7
           },
           "Move": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           }
         }
       },
       "Minion§Tentacle Beast": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Grappling Arms"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3431,15 +3431,14 @@
         },
         "stats": {
           "Combat": {
-            "value": 4,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 4
           },
           "Cost": {
-            "value": 21,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 21
           },
           "Evolution": {
-            "statType": "rank",
             "ranks": {
               "-": {
                 "order": 0
@@ -3458,24 +3457,25 @@
                   "Move": 1
                 }
               }
-            }
+            },
+            "statType": "rank"
           },
           "Life": {
-            "value": 9,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 9
           },
           "Move": {
-            "value": 8,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 8
           }
         }
       },
       "Minion§Torture Master": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Heed the Lash"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3484,20 +3484,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 6
           },
           "Cost": {
-            "value": 27,
-            "statType": "numeric"
-          },
-          "Life": {
-            "value": 10,
-            "statType": "numeric"
-          },
-          "Move": {
-            "value": 6,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 27
           },
           "Evolution": {
             "ranks": {
@@ -3509,17 +3501,25 @@
                 }
               }
             },
-            "visibility": "normal",
-            "tracked": false
+            "tracked": false,
+            "visibility": "normal"
+          },
+          "Life": {
+            "statType": "numeric",
+            "value": 10
+          },
+          "Move": {
+            "statType": "numeric",
+            "value": 6
           }
         }
       },
       "Minion§Venom Queen": {
         "assets": {
+          "included": [],
           "traits": [
             "Special Ability§Melting Touch"
-          ],
-          "included": []
+          ]
         },
         "keywords": {
           "Keywords": [
@@ -3528,12 +3528,12 @@
         },
         "stats": {
           "Combat": {
-            "value": 5,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 5
           },
           "Cost": {
-            "value": 31,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 31
           },
           "Evolution": {
             "ranks": {
@@ -3545,12 +3545,12 @@
             "statType": "rank"
           },
           "Life": {
-            "value": 13,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 13
           },
           "Move": {
-            "value": 5,
-            "statType": "numeric"
+            "statType": "numeric",
+            "value": 5
           }
         }
       },
@@ -3562,9 +3562,9 @@
         },
         "stats": {
           "Life": {
-            "value": 2,
+            "statType": "numeric",
             "tracked": true,
-            "statType": "numeric"
+            "value": 2
           }
         },
         "text": "Increase the demon’s Life by 2 when they are wearing this relic."
@@ -3617,12 +3617,10 @@
         },
         "rules": {
           "Fly type": {
-            "evals": [],
-            "failState": "warning",
-            "evaluate": "AND",
-            "order": 99,
             "actions": [
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -3631,11 +3629,11 @@
                     "icons"
                   ]
                 ],
-                "actionType": "add",
-                "value": "bat-wing",
-                "iterations": 1
+                "value": "bat-wing"
               },
               {
+                "actionType": "remove",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -3644,11 +3642,13 @@
                     "icons"
                   ]
                 ],
-                "actionType": "remove",
-                "value": "bird-claw",
-                "iterations": 1
+                "value": "bird-claw"
               }
-            ]
+            ],
+            "evals": [],
+            "evaluate": "AND",
+            "failState": "warning",
+            "order": 99
           }
         },
         "text": "The demon’s Move gains the Fly type."
@@ -3766,203 +3766,22 @@
           "traits": []
         },
         "rules": {
-          "warrior": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Leader",
-                    "value"
-                  ]
-                ],
-                "value": "Warrior",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 5,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§Warrior",
-                "iterations": 1
-              }
-            ]
-          },
-          "schemer": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Leader",
-                    "value"
-                  ]
-                ],
-                "value": "Schemer",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 5,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§Schemer",
-                "iterations": 1
-              }
-            ]
-          },
-          "zealot": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Leader",
-                    "value"
-                  ]
-                ],
-                "value": "Zealot",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 5,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader§Zealot",
-                "iterations": 1
-              }
-            ]
-          },
-          "earthTrait": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Earth-bound",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 1,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Ready to Move",
-                "iterations": 1
-              }
-            ]
-          },
-          "dementedTrait": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Demented",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 1,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Unpredictable Defense",
-                "iterations": 1
-              }
-            ]
-          },
           "brokers": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Brokers",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
             "actions": [
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "traits"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Devout§Tallyman",
-                "iterations": 1
+                "value": "Devout§Tallyman"
               },
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -3972,15 +3791,46 @@
                     "traits"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Leader Bonus§Rich in Soul",
-                "iterations": 1
+                "value": "Leader Bonus§Rich in Soul"
               }
-            ]
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Brokers"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
           },
           "brokersTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Tip the Scales"
+              }
+            ],
             "evals": [
               {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
@@ -3989,365 +3839,33 @@
                     "value"
                   ]
                 ],
-                "value": "Brokers",
-                "operator": "AND",
-                "not": false
+                "value": "Brokers"
               }
             ],
-            "failState": "pass",
             "evaluate": "OR",
-            "order": 1,
+            "failState": "pass",
+            "order": 1
+          },
+          "campaign": {
             "actions": [
               {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Tip the Scales",
-                "iterations": 1
-              }
-            ]
-          },
-          "judges": {
-            "evals": [
-              {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    "Philosophy",
-                    "value"
+                    "Cost",
+                    "max"
                   ]
                 ],
-                "value": "Judges",
-                "operator": "AND",
-                "not": false
+                "value": null
               }
             ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Devout§Executioner",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Leader",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader Bonus§Breaking the Rules",
-                "iterations": 1
-              }
-            ]
-          },
-          "judgesTrait": {
             "evals": [
               {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Judges",
+                "not": false,
                 "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 1,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Enforcing the Rules",
-                "iterations": 1
-              }
-            ]
-          },
-          "empty": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "The Empty",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Devout§Void Demon",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Leader",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader Bonus§One with Nothing",
-                "iterations": 1
-              }
-            ]
-          },
-          "emptyTrait": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "The Empty",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 1,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Burn it All",
-                "iterations": 1
-              }
-            ]
-          },
-          "lords": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Lords of Hell",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Devout§Lord of the Pit",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Leader",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader Bonus§Imperious Nature",
-                "iterations": 1
-              }
-            ]
-          },
-          "earth": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Earth-bound",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Devout§Succubus",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Leader",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader Bonus§Quick Escape",
-                "iterations": 1
-              }
-            ]
-          },
-          "demented": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Demented",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 10,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Devout§Madness Demon",
-                "iterations": 1
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    "Leader",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Leader Bonus§Maddening Insight",
-                "iterations": 1
-              }
-            ]
-          },
-          "lordsTrait": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "value"
-                  ]
-                ],
-                "value": "Lords of Hell",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 1,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Special Ability§Charismatic Leader",
-                "iterations": 1
-              }
-            ]
-          },
-          "standardCostMax200": {
-            "evals": [
-              {
                 "paths": [
                   [
                     "{self}",
@@ -4356,35 +3874,418 @@
                     "value"
                   ]
                 ],
-                "value": "Standard",
-                "operator": "AND",
-                "not": false
+                "value": "Campaign"
               }
             ],
-            "failState": "pass",
             "evaluate": "OR",
+            "failState": "pass"
+          },
+          "demented": {
             "actions": [
               {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Devout§Madness Demon"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Leader",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader Bonus§Maddening Insight"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
                 "paths": [
                   [
                     "{self}",
                     "stats",
-                    [
-                      "Soul Ledger",
-                      "Cost"
-                    ],
-                    "max"
+                    "Philosophy",
+                    "value"
                   ]
                 ],
-                "actionType": "set",
-                "value": 200,
-                "iterations": 1
+                "value": "Demented"
               }
-            ]
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
+          },
+          "dementedTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Unpredictable Defense"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Demented"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 1
+          },
+          "earth": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Devout§Succubus"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Leader",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader Bonus§Quick Escape"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Earth-bound"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
+          },
+          "earthTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Ready to Move"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Earth-bound"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 1
+          },
+          "empty": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Devout§Void Demon"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Leader",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader Bonus§One with Nothing"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "The Empty"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
+          },
+          "emptyTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Burn it All"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "The Empty"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 1
+          },
+          "judges": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Devout§Executioner"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Leader",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader Bonus§Breaking the Rules"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Judges"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
+          },
+          "judgesTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Enforcing the Rules"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Judges"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 1
+          },
+          "lords": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Devout§Lord of the Pit"
+              },
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    "Leader",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader Bonus§Imperious Nature"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Lords of Hell"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 10
+          },
+          "lordsTrait": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Special Ability§Charismatic Leader"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "value"
+                  ]
+                ],
+                "value": "Lords of Hell"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 1
           },
           "No more than 10 demons in a cabal.": {
             "evals": [
               {
+                "max": 10,
+                "not": false,
+                "operator": "SUM",
                 "paths": [
                   [
                     "{self}",
@@ -4395,227 +4296,17 @@
                       "Devout"
                     ]
                   ]
-                ],
-                "max": 10,
-                "operator": "SUM",
-                "not": false
+                ]
               }
             ],
-            "failState": "warning",
-            "evaluate": "OR"
-          },
-          "campaign": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Game Size",
-                    "value"
-                  ]
-                ],
-                "value": "Campaign",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
             "evaluate": "OR",
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Cost",
-                    "max"
-                  ]
-                ],
-                "actionType": "set",
-                "value": null,
-                "iterations": 1
-              }
-            ]
-          },
-          "Select your Leader Relic.": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Game Size",
-                    "value"
-                  ]
-                ],
-                "value": "Campaign",
-                "operator": "AND",
-                "not": true
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    "Leader Relic"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "error",
-            "evaluate": "OR"
-          },
-          "titles": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Game Size",
-                    "value"
-                  ]
-                ],
-                "value": "Campaign",
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 13,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "assets",
-                    "classification",
-                    [
-                      "Devout",
-                      "Leader",
-                      "Minion"
-                    ],
-                    "traits"
-                  ]
-                ],
-                "actionType": "add",
-                "value": "Titles§Titles",
-                "iterations": 1
-              }
-            ]
-          },
-          "Usurption": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "tally",
-                    [
-                      "Usurper",
-                      "[ Usurper ]"
-                    ]
-                  ]
-                ],
-                "min": 1,
-                "operator": "SUM",
-                "not": false
-              },
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits",
-                    "classification",
-                    "Leader",
-                    "tally",
-                    "Leader Relic"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 20,
-            "actions": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "traits"
-                  ]
-                ],
-                "actionType": "remove",
-                "value": [
-                  "{self}",
-                  "traits",
-                  "classification",
-                  "Leader",
-                  "item"
-                ],
-                "iterations": 1
-              }
-            ]
-          },
-          "You must select a Leader and a Philosophy.": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Philosophy",
-                    "processed",
-                    "rank",
-                    "current"
-                  ],
-                  [
-                    "{self}",
-                    "stats",
-                    "Leader",
-                    "processed",
-                    "rank",
-                    "current"
-                  ]
-                ],
-                "value": "-",
-                "operator": "OR",
-                "not": true
-              }
-            ],
-            "failState": "warning",
-            "evaluate": "OR"
+            "failState": "warning"
           },
           "notCampaign": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Game Size",
-                    "value"
-                  ]
-                ],
-                "value": "Campaign",
-                "operator": "AND",
-                "not": true,
-                "actionable": true
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 11,
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -4624,11 +4315,11 @@
                     "visibility"
                   ]
                 ],
-                "actionType": "set",
-                "value": "hidden",
-                "iterations": 1
+                "value": "hidden"
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -4648,11 +4339,11 @@
                     "visibility"
                   ]
                 ],
-                "actionType": "set",
-                "value": "hidden",
-                "iterations": 1
+                "value": "hidden"
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -4672,162 +4363,461 @@
                     "dynamic"
                   ]
                 ],
-                "actionType": "set",
-                "value": false,
-                "iterations": 1
+                "value": false
               }
-            ]
+            ],
+            "evals": [
+              {
+                "actionable": true,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Campaign"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 11
+          },
+          "schemer": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader§Schemer"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "value"
+                  ]
+                ],
+                "value": "Schemer"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 5
+          },
+          "Select your Leader Relic.": {
+            "evals": [
+              {
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Campaign"
+              },
+              {
+                "min": 1,
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    "Leader Relic"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "error"
+          },
+          "standardCostMax200": {
+            "actions": [
+              {
+                "actionType": "set",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    [
+                      "Soul Ledger",
+                      "Cost"
+                    ],
+                    "max"
+                  ]
+                ],
+                "value": 200
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Standard"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
+          },
+          "titles": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "assets",
+                    "classification",
+                    [
+                      "Devout",
+                      "Leader",
+                      "Minion"
+                    ],
+                    "traits"
+                  ]
+                ],
+                "value": "Titles§Titles"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Game Size",
+                    "value"
+                  ]
+                ],
+                "value": "Campaign"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 13
+          },
+          "Usurption": {
+            "actions": [
+              {
+                "actionType": "remove",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": [
+                  "{self}",
+                  "traits",
+                  "classification",
+                  "Leader",
+                  "item"
+                ]
+              }
+            ],
+            "evals": [
+              {
+                "min": 1,
+                "not": false,
+                "operator": "SUM",
+                "paths": [
+                  [
+                    "{self}",
+                    "tally",
+                    [
+                      "Usurper",
+                      "[ Usurper ]"
+                    ]
+                  ]
+                ]
+              },
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "traits",
+                    "classification",
+                    "Leader",
+                    "tally",
+                    "Leader Relic"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 20
+          },
+          "warrior": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader§Warrior"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "value"
+                  ]
+                ],
+                "value": "Warrior"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 5
+          },
+          "You must select a Leader and a Philosophy.": {
+            "evals": [
+              {
+                "not": true,
+                "operator": "OR",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Philosophy",
+                    "processed",
+                    "rank",
+                    "current"
+                  ],
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "processed",
+                    "rank",
+                    "current"
+                  ]
+                ],
+                "value": "-"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "warning"
+          },
+          "zealot": {
+            "actions": [
+              {
+                "actionType": "add",
+                "iterations": 1,
+                "paths": [
+                  [
+                    "{self}",
+                    "traits"
+                  ]
+                ],
+                "value": "Leader§Zealot"
+              }
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Leader",
+                    "value"
+                  ]
+                ],
+                "value": "Zealot"
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 5
           }
         },
         "stats": {
           "Cost": {
-            "label": "Souls",
-            "value": 0,
             "group": "Cost",
             "groupOrder": -1,
-            "tracked": true,
+            "label": "Souls",
             "max": 100,
-            "statType": "numeric"
-          },
-          "Soul Ledger": {
             "statType": "numeric",
-            "value": 0,
-            "icons": [
-              "evil-book"
-            ],
-            "dynamic": true
+            "tracked": true,
+            "value": 0
+          },
+          "Game Size": {
+            "dynamic": true,
+            "ranks": {
+              "Campaign": {
+                "hotkey": "c",
+                "order": 0
+              },
+              "Learning": {
+                "hotkey": "l",
+                "order": 1
+              },
+              "Standard": {
+                "hotkey": "s",
+                "order": 2
+              }
+            },
+            "statType": "rank",
+            "tracked": false,
+            "value": "Campaign",
+            "visibility": "normal"
           },
           "Leader": {
-            "statType": "rank",
-            "value": "-",
+            "dynamic": true,
             "ranks": {
               "-": {
                 "order": 0
               },
-              "Warrior": {
-                "order": 1,
-                "icons": [
-                  "harpoon-trident"
-                ]
-              },
               "Schemer": {
-                "order": 2,
                 "icons": [
                   "evil-fork"
-                ]
+                ],
+                "order": 2
+              },
+              "Warrior": {
+                "icons": [
+                  "harpoon-trident"
+                ],
+                "order": 1
               },
               "Zealot": {
-                "order": 3,
                 "icons": [
                   "holy-symbol"
-                ]
+                ],
+                "order": 3
               }
             },
-            "visibility": "normal",
-            "dynamic": true,
-            "tracked": false
+            "statType": "rank",
+            "tracked": false,
+            "value": "-",
+            "visibility": "normal"
           },
           "Philosophy": {
-            "statType": "rank",
-            "value": "-",
+            "dynamic": true,
             "ranks": {
               "-": {
-                "order": 0,
-                "format": "-"
-              },
-              "Lords of Hell": {
-                "order": 1,
-                "icons": [
-                  "samara-mosque",
-                  "crown"
-                ],
-                "text": "**Lords of Hell**—Fighting to restore Hell's glory and old ways"
-              },
-              "Earth-bound": {
-                "order": 2,
-                "icons": [
-                  "skeleton-key",
-                  "closed-doors"
-                ],
-                "text": "**Earth-bound**—Looking to escape Hell permanently for Earth"
-              },
-              "Demented": {
-                "order": 3,
-                "icons": [
-                  "scale-mail",
-                  "animal-hide"
-                ],
-                "text": "**Demented**—Choosing to embrace the madness of Hell"
+                "format": "-",
+                "order": 0
               },
               "Brokers": {
-                "order": 4,
                 "icons": [
                   "coins",
                   "scales"
                 ],
+                "order": 4,
                 "text": "**Brokers**—Trading and dealing in the currency of souls"
               },
+              "Demented": {
+                "icons": [
+                  "scale-mail",
+                  "animal-hide"
+                ],
+                "order": 3,
+                "text": "**Demented**—Choosing to embrace the madness of Hell"
+              },
+              "Earth-bound": {
+                "icons": [
+                  "skeleton-key",
+                  "closed-doors"
+                ],
+                "order": 2,
+                "text": "**Earth-bound**—Looking to escape Hell permanently for Earth"
+              },
               "Judges": {
-                "order": 5,
                 "icons": [
                   "scroll-quill",
                   "banging-gavel"
                 ],
+                "order": 5,
                 "text": "**Judges**—Using and abusing the remaining rules for power"
               },
+              "Lords of Hell": {
+                "icons": [
+                  "samara-mosque",
+                  "crown"
+                ],
+                "order": 1,
+                "text": "**Lords of Hell**—Fighting to restore Hell's glory and old ways"
+              },
               "The Empty": {
-                "order": 6,
                 "icons": [
                   "lightning-saber",
                   "flame"
                 ],
+                "order": 6,
                 "text": "**The Empty**—Wanting to see Hell destroyed and unmade"
               }
             },
-            "visibility": "normal",
-            "dynamic": true,
-            "tracked": false
-          },
-          "Game Size": {
             "statType": "rank",
-            "value": "Campaign",
-            "ranks": {
-              "Campaign": {
-                "order": 0,
-                "hotkey": "c"
-              },
-              "Learning": {
-                "order": 1,
-                "hotkey": "l"
-              },
-              "Standard": {
-                "order": 2,
-                "hotkey": "s"
-              }
-            },
-            "visibility": "normal",
+            "tracked": false,
+            "value": "-",
+            "visibility": "normal"
+          },
+          "Soul Ledger": {
             "dynamic": true,
-            "tracked": false
+            "icons": [
+              "evil-book"
+            ],
+            "statType": "numeric",
+            "value": 0
           }
         }
       },
       "Soul Loss§Madness": {
-        "stats": {
-          "Combat": {
-            "statType": "numeric",
-            "value": 3,
-            "visibility": "hidden",
-            "dynamic": false,
-            "tracked": true
-          }
-        },
-        "text": "This demon may never increase its experience, or wield a relic. The demon increases its Combat score by 3.",
         "rules": {
           "madness": {
-            "failState": "pass",
-            "evaluate": "AND",
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -4836,11 +4826,11 @@
                     "dynamic"
                   ]
                 ],
-                "actionType": "set",
-                "value": false,
-                "iterations": 1
+                "value": false
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -4849,11 +4839,11 @@
                     "increment"
                   ]
                 ],
-                "actionType": "set",
-                "value": null,
-                "iterations": 1
+                "value": null
               },
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -4861,13 +4851,23 @@
                     "classifications"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Relic",
-                "iterations": 1
+                "value": "Relic"
               }
-            ]
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
           }
-        }
+        },
+        "stats": {
+          "Combat": {
+            "dynamic": false,
+            "statType": "numeric",
+            "tracked": true,
+            "value": 3,
+            "visibility": "hidden"
+          }
+        },
+        "text": "This demon may never increase its experience, or wield a relic. The demon increases its Combat score by 3."
       },
       "Special Ability§A Worthy Sacrifice": {
         "text": "Once per game, you may destroy any friendly demon within 3” of this model. If you do so, the Lord of the Pit heals an amount of life equal to the destroyed demon's current life (you gain a Soul Dice as normal for slaying the demon)."
@@ -4879,24 +4879,12 @@
         "text": "When any Empty demon is within 1” of an objective or a piece of terrain no larger than 4” by 4”, you may roll your Combat Attack dice instead of attacking. If you do so and roll at least two 6s, then that objective or piece of terrain is destroyed (in the case of terrain, remove the terrain and replace it with rubble of a similar size no more than 1” high)."
       },
       "Special Ability§Charismatic Leader": {
-        "text": "When building your cabal, you may recruit one additional lesser Minion for free.",
-        "stats": {
-          "Cost": {
-            "value": 0,
-            "label": "Discount",
-            "statType": "numeric",
-            "visibility": "active",
-            "tracked": true
-          }
-        },
         "rules": {
           "Reduce minions by 1": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "OR",
-            "order": 25,
             "actions": [
               {
+                "actionType": "modify",
+                "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
@@ -4904,18 +4892,19 @@
                     "Minion"
                   ]
                 ],
-                "actionType": "modify",
-                "value": -1,
-                "iterations": 1
+                "value": -1
               }
-            ]
+            ],
+            "evals": [],
+            "evaluate": "OR",
+            "failState": "pass",
+            "order": 25
           },
           "showFree": {
-            "failState": "pass",
-            "evaluate": "AND",
-            "order": 7,
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
@@ -4927,11 +4916,11 @@
                     "visibility"
                   ]
                 ],
-                "actionType": "set",
-                "value": "always",
-                "iterations": 1
+                "value": "always"
               },
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
@@ -4943,13 +4932,24 @@
                     "dynamic"
                   ]
                 ],
-                "actionType": "set",
-                "value": true,
-                "iterations": 1
+                "value": true
               }
-            ]
+            ],
+            "evaluate": "AND",
+            "failState": "pass",
+            "order": 7
           }
-        }
+        },
+        "stats": {
+          "Cost": {
+            "label": "Discount",
+            "statType": "numeric",
+            "tracked": true,
+            "value": 0,
+            "visibility": "active"
+          }
+        },
+        "text": "When building your cabal, you may recruit one additional lesser Minion for free."
       },
       "Special Ability§Combat Master": {
         "text": "Whenever the Warrior makes a Combat roll (Attack or Defense), they may choose to change the value of any one combat dice to 6."
@@ -5009,14 +5009,12 @@
         "text": "When the Corpulent Demon activates, they heal 2 damage."
       },
       "Special Ability§Ready to Move": {
-        "text": "Earth-Bound demons increase their Move ability by 1.",
         "rules": {
           "Earth-bound speed": {
-            "evals": [],
-            "failState": "pass",
-            "evaluate": "OR",
             "actions": [
               {
+                "actionType": "modify",
+                "iterations": 1,
                 "paths": [
                   [
                     "{roster}",
@@ -5032,13 +5030,15 @@
                     "value"
                   ]
                 ],
-                "actionType": "modify",
-                "value": 1,
-                "iterations": 1
+                "value": 1
               }
-            ]
+            ],
+            "evals": [],
+            "evaluate": "OR",
+            "failState": "pass"
           }
-        }
+        },
+        "text": "Earth-Bound demons increase their Move ability by 1."
       },
       "Special Ability§Righteousness": {
         "text": "The Lord of the Pit starts the battle with a Righteousness score of 0. Every time they slay an enemy model, they gain 1 Righteousness. Each time you make a Combat Dice roll, you may increase the result of a single die by an amount equal to the Lord of the Pit’s current Righteousness."
@@ -5074,13 +5074,12 @@
         "text": "Whenever this demon slays a friendly model, roll a d6. On a result of a 5+, they gain an additional Soul Dice."
       },
       "Title§Covetous": {
-        "text": "",
         "rules": {
           "2relics": {
-            "failState": "pass",
-            "evaluate": "AND",
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -5090,13 +5089,14 @@
                     "max"
                   ]
                 ],
-                "actionType": "set",
-                "value": 2,
-                "iterations": 1
+                "value": 2
               }
-            ]
+            ],
+            "evaluate": "AND",
+            "failState": "pass"
           }
-        }
+        },
+        "text": ""
       },
       "Title§Destroyer": {
         "text": "Once per battle, after slaying an enemy demon, this demon may immediately fight again, making a second Combat Attack roll against any other enemy in range."
@@ -5111,42 +5111,12 @@
         "text": "Roll twice on the Soul Loss table, selecting either result."
       },
       "Title§Pacifist": {
-        "stats": {
-          "Combat": {
-            "value": -1,
-            "tracked": true,
-            "statType": "numeric",
-            "visibility": "hidden"
-          },
-          "Life": {
-            "value": 2,
-            "tracked": true,
-            "statType": "numeric",
-            "visibility": "hidden"
-          }
-        },
-        "text": "",
         "rules": {
           "Renounce pacifism": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{self}",
-                    "stats",
-                    "Renounce",
-                    "value"
-                  ]
-                ],
-                "value": 1,
-                "operator": "AND",
-                "not": false
-              }
-            ],
-            "failState": "pass",
-            "evaluate": "OR",
             "actions": [
               {
+                "actionType": "set",
+                "iterations": 1,
                 "paths": [
                   [
                     "{self}",
@@ -5158,13 +5128,43 @@
                     "value"
                   ]
                 ],
-                "actionType": "set",
-                "value": 0,
-                "iterations": 1
+                "value": 0
               }
-            ]
+            ],
+            "evals": [
+              {
+                "not": false,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{self}",
+                    "stats",
+                    "Renounce",
+                    "value"
+                  ]
+                ],
+                "value": 1
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "pass"
           }
-        }
+        },
+        "stats": {
+          "Combat": {
+            "statType": "numeric",
+            "tracked": true,
+            "value": -1,
+            "visibility": "hidden"
+          },
+          "Life": {
+            "statType": "numeric",
+            "tracked": true,
+            "value": 2,
+            "visibility": "hidden"
+          }
+        },
+        "text": ""
       },
       "Title§Regent Slayer": {
         "text": "Increase your Combat ability by 1 when fighting enemy\nLeaders."
@@ -5175,9 +5175,9 @@
       "Title§Survivor": {
         "stats": {
           "Life": {
-            "value": 1,
-            "tracked": true,
             "statType": "numeric",
+            "tracked": true,
+            "value": 1,
             "visibility": "hidden"
           }
         },
@@ -5187,27 +5187,12 @@
         "text": "This demon may roll twice when making a check for any terrain and select either result."
       },
       "Title§Usurper": {
-        "text": "This demon becomes the Leader, uses the Leader advancement and your current Leader is removed from the warband as per the Cull the Weak ability. You gain 20 souls for culling the Leader and any Relic the Leader possessed is now owned by this model, but may be transferred as normal (this model is still capped at one Relic maximum).",
         "rules": {
           "Move your leader's relic so they can be usurped": {
-            "evals": [
-              {
-                "paths": [
-                  [
-                    "{roster}",
-                    "tally",
-                    "Leader"
-                  ]
-                ],
-                "min": 1,
-                "operator": "AND",
-                "not": true
-              }
-            ],
-            "failState": "warning",
-            "evaluate": "OR",
             "actions": [
               {
+                "actionType": "add",
+                "iterations": 1,
                 "paths": [
                   [
                     "{parent}",
@@ -5216,13 +5201,28 @@
                     "Keywords"
                   ]
                 ],
-                "actionType": "add",
-                "value": "Leader Demon",
-                "iterations": 1
+                "value": "Leader Demon"
               }
-            ]
+            ],
+            "evals": [
+              {
+                "min": 1,
+                "not": true,
+                "operator": "AND",
+                "paths": [
+                  [
+                    "{roster}",
+                    "tally",
+                    "Leader"
+                  ]
+                ]
+              }
+            ],
+            "evaluate": "OR",
+            "failState": "warning"
           }
-        }
+        },
+        "text": "This demon becomes the Leader, uses the Leader advancement and your current Leader is removed from the warband as per the Cull the Weak ability. You gain 20 souls for culling the Leader and any Relic the Leader possessed is now owned by this model, but may be transferred as normal (this model is still capped at one Relic maximum)."
       },
       "Titles§Titles": {}
     },
