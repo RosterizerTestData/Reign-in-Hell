@@ -5,9 +5,9 @@
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
   "url": "https://www.snarlingbadger.com/reigninhell",
-  "notes": "This manifest is provided for the purposes of testing *Rosterizer* and is not intended for distribution.",
+  "notes": "This rulebook is provided for the purposes of testing *Rosterizer* and is not intended for distribution.",
   "wip": false,
-  "manifest": {
+  "rulebook": {
     "assetTaxonomy": {
       "Demon": {
         "allowed": {
