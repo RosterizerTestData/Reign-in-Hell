@@ -1,6 +1,6 @@
 {
   "name": "Reign in Hell",
-  "revision": "0.2.2",
+  "revision": "0.3.0",
   "game": "Reign in Hell",
   "genre": "fantasy",
   "publisher": "Snarling Badger Studios",
@@ -3749,7 +3749,7 @@
         },
         "text": "Once per round, this demon may reroll a single dice. This may not be used for the initiative roll."
       },
-      "Roster§Cabal": {
+      "Roster§Roster": {
         "allowed": {
           "classifications": [
             "Minion"
@@ -3757,6 +3757,7 @@
         },
         "aspects": {
           "Describe": true,
+          "Label": "Cabal",
           "Lock Qty": true,
           "Rename": true,
           "Type": "conceptual",
