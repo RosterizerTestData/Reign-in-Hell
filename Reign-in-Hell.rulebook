@@ -1683,9 +1683,7 @@
                   ]
                 ],
                 "value": [
-                  "{self}",
-                  "rules",
-                  "Renouncement",
+                  "{this}",
                   "evals",
                   "1",
                   "result",
